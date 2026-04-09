@@ -179,3 +179,87 @@
     visibility: hidden !important;
     pointer-events: none;
 }
+
+/* Statblock tab system */
+.statblock-wrapper { margin: 20px 0; }
+.statblock-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 0;
+}
+.statblock-tab {
+    padding: 6px 18px;
+    border: none;
+    background: #ddd;
+    color: #184e4f;
+    font-family: 'Times New Roman', serif;
+    font-variant: small-caps;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+    transition: background 0.2s;
+}
+.statblock-tab:hover { background: #e8e8e8; }
+.statblock-tab.active { background: #f5f5f5; }
+.statblock-panel { display: none; }
+.statblock-panel.active { display: block; }
+
+/* Lore/Summary block */
+.lore-block {
+    background: #f5f5f5;
+    padding: 20px;
+    border-top: 4px solid #184e4f;
+    border-bottom: 4px solid #184e4f;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    font-family: 'Times New Roman', serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+}
+.lore-title {
+    font-family: 'Times New Roman', serif;
+    font-size: 2em;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: #184e4f;
+    margin: 0 0 10px 0;
+    letter-spacing: 1px;
+}
+.lore-section { margin-bottom: 12px; }
+.lore-section-header {
+    font-family: 'Times New Roman', serif;
+    font-size: 18px;
+    font-variant: small-caps;
+    color: #184e4f;
+    margin: 14px 0 6px 0;
+    border-bottom: 1px solid #184e4f;
+    padding-bottom: 2px;
+}
+.lore-description { margin-bottom: 12px; text-align: justify; }
+.lore-intro { margin: 0 0 6px 0; font-style: italic; }
+.lore-dc-entry { margin: 4px 0 4px 10px; }
+.lore-encounter-group {
+    margin: 6px 0 6px 10px;
+    padding: 4px 0;
+    border-bottom: 1px dotted #bbb;
+}
+.lore-encounter-group:last-child { border-bottom: none; }
+.lore-encounters-desc { margin: 0 0 8px 0; }
+.lore-encounter-treasure { margin-left: 10px; font-style: italic; }
+.lore-table {
+    width: 100%; border-collapse: collapse;
+    margin: 4px 0 10px 0; font-size: 14px; line-height: 1.4;
+}
+.lore-table th {
+    background: #184e4f; color: white;
+    padding: 4px 8px; text-align: left;
+    font-variant: small-caps; font-size: 14px;
+}
+.lore-table td {
+    padding: 4px 8px; border-bottom: 1px solid #d4cbb8; vertical-align: top;
+}
+.lore-table tr:nth-child(even) td { background: #ededed; }
+.lore-table-roll { white-space: nowrap; font-weight: bold; width: 40px; text-align: center; }
+.lore-loot-desc { margin: 0 0 6px 0; }
+.lore-names { margin: 4px 0; font-style: italic; }

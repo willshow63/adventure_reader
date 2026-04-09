@@ -191,6 +191,33 @@
     padding: 0; color: inherit;
   }
 
+  /* Statblock color overrides for adventure theme */
+  .stat-block {
+    border-color: var(--magenta);
+    background: rgba(255,255,255,0.25);
+    box-shadow: none;
+  }
+  .monster-name { color: var(--magenta) !important; }
+  .divider { background: linear-gradient(to right, var(--magenta), var(--magenta) 60%, transparent) !important; }
+  .abilities { color: var(--magenta) !important; }
+  .section-header { color: var(--magenta) !important; border-bottom-color: var(--magenta) !important; }
+  .stat-col-1 { border-right-color: var(--magenta) !important; }
+  .statblock-tab { color: var(--magenta); }
+  .statblock-tab.active { background: rgba(255,255,255,0.25); }
+  .lore-block {
+    border-color: var(--magenta);
+    background: rgba(255,255,255,0.25);
+    box-shadow: none;
+    font-family: 'Crimson Text', Georgia, serif;
+  }
+  .lore-title { color: var(--magenta) !important; }
+  .lore-section-header { color: var(--magenta) !important; border-bottom-color: var(--magenta) !important; }
+  .lore-table th { background: var(--magenta) !important; }
+  .stat-block.two-column { width: auto; max-width: 100%; }
+  .stat-block.single-column { width: auto; max-width: 100%; }
+  .stat-col-1, .stat-col-2 { width: auto; min-width: 0; flex: 1; }
+  .statblock-wrapper { margin: 24px 0; }
+
   /* Read-aloud box */
   .read-aloud {
     background: var(--rose-fill);
