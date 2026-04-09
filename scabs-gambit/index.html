@@ -182,8 +182,10 @@
   }
   /* No drop caps in appendices */
   .section-appendix h2 + p::first-letter {
-    font-size: inherit; float: none; line-height: inherit;
-    padding: 0; color: inherit;
+    font-family: inherit !important; font-size: inherit !important;
+    font-weight: inherit !important; float: none !important;
+    line-height: inherit !important; padding: 0 !important;
+    color: inherit !important;
   }
 
   /* Statblock color overrides — matching the PDF source style */
