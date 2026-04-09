@@ -1,0 +1,46 @@
+{
+  "monsterId": "giant_sewer_roach",
+  "name": "Giant Sewer Roach (Mount)",
+  "size": "Large",
+  "type": "Beast",
+  "alignment": "Unaligned",
+  "ac": 13,
+  "acType": "natural armor",
+  "hp": 19,
+  "hpFormula": "3d10 + 3",
+  "speed": "40 ft., climb 30 ft.",
+  "abilities": { "str": 13, "dex": 15, "con": 13, "int": 1, "wis": 7, "cha": 3 },
+  "savingThrows": "",
+  "skills": "",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 60 ft., Tremorsense 30 ft., Passive Perception 8",
+  "languages": "",
+  "cr": "1/4",
+  "xp": "50",
+  "features": [
+    { "name": "Sludge Walker", "text": "The roach's long legs allow it to move across the surface of sludge, toxic water, and similar liquid hazards without taking damage, provided it does not stop moving. If the roach ends its turn on such a surface, it sinks and is subject to the liquid's effects normally." },
+    { "name": "Skittish", "text": "The roach has advantage on initiative rolls. When it takes damage, its rider must succeed on a DC 10 Animal Handling check or the roach bolts in a random direction for 1 round." }
+  ],
+  "actions": [
+    { "name": "Mandibles", "attackType": "Melee Weapon Attack", "toHit": "+3 to hit", "reach": "reach 5 ft.", "target": "one target", "damage": "4 (1d6 + 1) slashing damage." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "Oversized cockroaches large enough to ride as mounts. Drizzle, the Snotrocket spy, has been secretly breeding and training four of them in a hidden pen behind the Dripfort's larder as an escape plan. Their long legs allow them to skitter across the toxic sludge moat without submerging their bodies. Skittish but trained to follow simple commands from Drizzle. If spoken to with magic, they cooperate readily - they hate the Dripfort and want to leave.",
+    "encounters": {
+      "description": "Hidden in a secret pen behind the larder in the Dripfort. Used as mounts for the escape.",
+      "groups": [
+        { "cr": "1/4", "creatures": "4 giant sewer roaches (saddled, trained by Drizzle)", "treasure": "None" }
+      ]
+    }
+  }
+}

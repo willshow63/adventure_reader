@@ -1,0 +1,63 @@
+{
+  "monsterId": "rattooth",
+  "name": "Rattooth",
+  "size": "Small",
+  "type": "Humanoid (goblinoid)",
+  "alignment": "Chaotic Evil",
+  "ac": 14,
+  "acType": "hide armor",
+  "hp": 52,
+  "hpFormula": "8d6 + 24",
+  "speed": "25 ft.",
+  "abilities": { "str": 14, "dex": 14, "con": 16, "int": 6, "wis": 12, "cha": 7 },
+  "savingThrows": "",
+  "skills": "Athletics +5, Perception +4, Survival +4",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 60 ft., Passive Perception 14",
+  "languages": "Goblin, Common",
+  "cr": "5",
+  "xp": "1800",
+  "features": [
+    { "name": "Nimble Escape", "text": "Rattooth can take the Disengage or Hide action as a bonus action on each of his turns." }
+  ],
+  "actions": [
+    { "name": "Multiattack", "text": "Rattooth makes two attacks with Sizzlespear and one Grappling Hook attack, or three Grappling Hook attacks." },
+    { "name": "Sizzlespear", "attackType": "Melee or Ranged Weapon Attack", "toHit": "+5 to hit", "reach": "reach 5 ft. (or range 20/60 ft. if thrown)", "target": "one target", "damage": "5 (1d6 + 2) piercing damage, and every creature within 10 feet of the target (including Rattooth and allies) must make a DC 12 Dexterity saving throw or take 10 (3d6) acid damage, or half on a successful save." },
+    { "name": "Grappling Hook", "attackType": "Ranged Weapon Attack", "toHit": "+5 to hit", "reach": "range 20/40 ft.", "target": "one target", "damage": "7 (2d4 + 2) piercing damage. A creature hit must succeed on a DC 12 Dexterity check or gain the grappled condition. Rattooth can use a bonus action to pull a grappled creature 5 feet closer, dealing 5 (2d4) piercing damage. A creature can remove the hook with a DC 12 Strength check. Rattooth can release the grapple as a free action." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "A stocky, scarred goblin with a permanent scowl and blistered hands. Mogrot's enforcer and the Grimebacks' most dangerous fighter. He wields Sizzlespear, whose acid AoE has devastated Snotrocket scouts but has been burning Rattooth too. His hands are raw and trembling from weeks of acid damage. He's in constant pain but too proud and too afraid of Mogrot to complain. He sleeps with Sizzlespear within arm's reach and a grappling hook under his pillow.",
+    "encounters": {
+      "description": "During the day, found in the fighting pit or on patrol. At night (after 2 AM), sleeping in his quarters adjacent to the goat pen (Location 7b).",
+      "groups": [
+        { "cr": "5", "creatures": "Rattooth alone in his quarters (sleeping after 2 AM, Sizzlespear within arm's reach)", "treasure": "Sizzlespear, a grappling hook, 23 cp, 1 goblin trinket, a charcoal map of Snotrocket tunnels" }
+      ]
+    },
+    "behavior": [
+      { "roll": "1", "text": "Practicing with Sizzlespear in the fighting pit, melting training dummies into puddles while a crowd watches." },
+      { "roll": "2", "text": "Sleeping in his quarters next to the goat pen with Sizzlespear within arm's reach." },
+      { "roll": "3", "text": "Leading a patrol or drinking with other Grimebacks." }
+    ],
+    "loot": {
+      "title": "Rattooth's Quarters",
+      "description": "Searching Rattooth's spartan room yields:",
+      "dieType": "d4",
+      "table": [
+        { "roll": "1", "text": "Sizzlespear (cursed magic spear, acid AoE on every hit)" },
+        { "roll": "2", "text": "A grappling hook (kept under his pillow)" },
+        { "roll": "3", "text": "23 copper pieces in a leather pouch" },
+        { "roll": "4", "text": "A crude charcoal map of the Snotrocket tunnels (valuable intelligence for King Scab)" }
+      ]
+    }
+  }
+}

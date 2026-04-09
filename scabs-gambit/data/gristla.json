@@ -1,0 +1,86 @@
+{
+  "monsterId": "gristla",
+  "name": "Gristla",
+  "size": "Small",
+  "type": "Humanoid (goblinoid)",
+  "alignment": "Neutral Evil",
+  "ac": 12,
+  "acType": "unarmored",
+  "hp": 21,
+  "hpFormula": "6d6",
+  "speed": "25 ft.",
+  "abilities": {
+    "str": 7,
+    "dex": 14,
+    "con": 11,
+    "int": 10,
+    "wis": 12,
+    "cha": 14
+  },
+  "savingThrows": "",
+  "skills": "Arcana +2, Persuasion +4",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 60 ft., Passive Perception 11",
+  "languages": "Common, Goblin",
+  "cr": "1",
+  "xp": "200",
+  "features": [
+    {
+      "name": "Nimble Escape",
+      "text": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+    },
+    {
+      "name": "Grimeback Hexer",
+      "text": "Uses the Grimeback Hexer stat block. Gristla has all the same features and actions as a Grimeback Hexer, including Nimble Escape, Multiattack, Dagger, Sludge Bolt, and Spellcasting."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "text": "The hexer makes two Dagger attacks or two Sludge Bolt attacks. It can replace one attack with Spellcasting."
+    },
+    {
+      "name": "Dagger",
+      "attackType": "Melee or Ranged Weapon Attack",
+      "toHit": "+4 to hit",
+      "reach": "reach 5 ft. or range 20/60 ft.",
+      "target": "one target",
+      "damage": "4 (1d4 + 2) piercing damage."
+    },
+    {
+      "name": "Sludge Bolt",
+      "attackType": "Ranged Spell Attack",
+      "toHit": "+4 to hit",
+      "reach": "range 60 ft.",
+      "target": "one target",
+      "damage": "7 (1d10 + 2) acid damage."
+    },
+    {
+      "name": "Spellcasting",
+      "text": "The hexer casts one of the following spells, requiring no material components, using Charisma as the spellcasting ability (spell save DC 12):<br><br>At will: mage hand, minor illusion<br><br>2/day each: thunderwave, shield"
+    }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "Mogrot's daughter, a Grimeback hexer in her own right. She lives in a surprisingly well-appointed room on the upper level of the Dripfort, with an actual blanket, a cracked mirror, and a decorative collection of colorful surface-world bottles. She is engaged in a secret relationship with Skivvy, the scout captain. After midnight, Skivvy sneaks up to her room to read her terrible love poetry. If their relationship were discovered, Mogrot would be furious.",
+    "encounters": {
+      "description": "Found in her room on the upper level (Location 11b). After midnight, Skivvy is with her.",
+      "groups": [
+        { "cr": "5-6", "creatures": "Gristla and Skivvy together after midnight. If noise is made, 2 Grimeback thug guards from the platform arrive at end of round 1.", "treasure": "234 sp, a painted porcelain figurine (30 gp), a black pearl necklace (100 gp), a brass hand mirror (5 gp), an ornamental bronze helmet (10 gp)" }
+      ]
+    },
+    "behavior": [
+      { "roll": "1", "text": "Spending time in her room on the upper level, tending her collection of surface-world bottles." },
+      { "roll": "2", "text": "After midnight, lying on her bed listening to Skivvy read terrible poetry with an expression that might be adoration or pity." }
+    ]
+  }
+}

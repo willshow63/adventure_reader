@@ -1,0 +1,54 @@
+{
+  "monsterId": "skivvy",
+  "name": "Skivvy",
+  "size": "Small",
+  "type": "Humanoid (goblinoid)",
+  "alignment": "Chaotic Evil",
+  "ac": 16,
+  "acType": "Rat King's Hide",
+  "hp": 65,
+  "hpFormula": "10d6 + 30",
+  "speed": "25 ft.",
+  "abilities": { "str": 12, "dex": 16, "con": 16, "int": 8, "wis": 14, "cha": 8 },
+  "savingThrows": "",
+  "skills": "Stealth +6, Perception +5, Survival +5",
+  "damageVulnerabilities": "",
+  "damageResistances": "Bludgeoning, Piercing, and Slashing from Nonmagical Attacks (from Rat King's Hide)",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 60 ft., Passive Perception 15",
+  "languages": "Goblin, Common",
+  "cr": "5",
+  "xp": "1800",
+  "features": [
+    { "name": "Nimble Escape", "text": "Skivvy can take the Disengage or Hide action as a bonus action on each of his turns." },
+    { "name": "Rat Bite Curse", "text": "At the start of each of Skivvy's turns in combat, the Rat King's Hide bites him for 1d4 piercing damage. This damage ignores his resistance." },
+    { "name": "Hydrophobia", "text": "Skivvy cannot willingly move within 10 feet of a body of water larger than a bucket. If forced within range, he is frightened until the start of his next turn." },
+    { "name": "Death Swarm", "text": "When Skivvy drops to 0 HP, the Rat King's Hide unravels into a swarm of rats that surges toward the creature that dealt the killing blow. That creature must succeed on a DC 18 Strength check or the armor forcibly equips itself onto them. If resisted, the armor goes inert until someone willingly puts it on." }
+  ],
+  "actions": [
+    { "name": "Multiattack", "text": "Skivvy makes three attacks with his shortsword or longbow." },
+    { "name": "Shortsword", "attackType": "Melee Weapon Attack", "toHit": "+6 to hit", "reach": "reach 5 ft.", "target": "one target", "damage": "6 (1d6 + 3) slashing damage." },
+    { "name": "Longbow", "attackType": "Ranged Weapon Attack", "toHit": "+6 to hit", "reach": "range 150/600 ft.", "target": "one target", "damage": "7 (1d8 + 3) piercing damage." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "A lean, twitchy goblin who was once known for his speed and silence. Since putting on the Rat King's Hide, he's become visibly miserable - the armor bites him constantly, he can't get near water without panicking, and the rats squeak and squirm ceaselessly. But the damage resistance has made him nearly unkillable in fights, and Mogrot won't let him take it off. He has found unexpected comfort in his secret relationship with Mogrot's daughter, Gristla, to whom he reads terrible poetry after midnight.",
+    "encounters": {
+      "description": "During the day, spotted on the upper catwalk in squirming rat-hide armor. After midnight, sneaks up to Gristla's room on the upper level (Location 11b) to read her poetry.",
+      "groups": [
+        { "cr": "5-6", "creatures": "Skivvy and Gristla together in her room after midnight", "treasure": "Rat King's Hide (cursed armor, worn by Skivvy), 234 sp, a painted porcelain figurine (30 gp), a black pearl necklace (100 gp), a brass hand mirror (5 gp), an ornamental bronze helmet (10 gp)" }
+      ]
+    },
+    "behavior": [
+      { "roll": "1", "text": "Walking the upper catwalks in his squirming, squeaking rat-hide armor, flinching and slapping at himself." },
+      { "roll": "2", "text": "After midnight, reading terrible love poetry to Gristla in her room on the upper level." }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "monsterId": "sewer_rat_swarm",
+  "name": "Sewer Rat Swarm",
+  "size": "Medium",
+  "type": "Swarm of Tiny beasts",
+  "alignment": "Unaligned",
+  "ac": 10,
+  "acType": "",
+  "hp": 24,
+  "hpFormula": "7d8 - 7",
+  "speed": "30 ft.",
+  "abilities": { "str": 9, "dex": 11, "con": 9, "int": 2, "wis": 10, "cha": 3 },
+  "savingThrows": "",
+  "skills": "",
+  "damageVulnerabilities": "",
+  "damageResistances": "Bludgeoning, Piercing, Slashing",
+  "damageImmunities": "",
+  "conditionImmunities": "Charmed, Frightened, Grappled, Paralyzed, Petrified, Prone, Restrained, Stunned",
+  "senses": "Darkvision 30 ft., Passive Perception 10",
+  "languages": "",
+  "cr": "1/4",
+  "xp": "50",
+  "features": [
+    { "name": "Keen Smell", "text": "The swarm has advantage on Perception checks relying on smell." },
+    { "name": "Swarm", "text": "The swarm can occupy another creature's space and vice versa. The swarm can move through openings large enough for a Tiny rat. The swarm can't regain hit points or gain temporary hit points." }
+  ],
+  "actions": [
+    { "name": "Bites", "attackType": "Melee Weapon Attack", "toHit": "+2 to hit", "reach": "reach 0 ft.", "target": "one target in the swarm's space", "damage": "7 (2d6) piercing damage, or 3 (1d6) piercing damage if the swarm has half its hit points or fewer." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "A writhing carpet of small rat bodies surging through the Blackflow tunnels. Dozens, maybe hundreds, pouring from side pipes in a coordinated mass. The swarm gets a free attack before combat begins, catching victims off guard as the rats brush against ankles before the full wave hits.",
+    "encounters": {
+      "description": "Found in the Blackflow tunnels as a random encounter.",
+      "groups": [
+        { "cr": "1/4", "creatures": "1 sewer rat swarm surging from a side pipe", "treasure": "None" }
+      ]
+    }
+  }
+}

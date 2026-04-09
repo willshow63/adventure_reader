@@ -1,0 +1,57 @@
+{
+  "monsterId": "fizzpop_the_tinker",
+  "name": "Fizzpop the Tinker",
+  "size": "Small",
+  "type": "Humanoid (goblinoid)",
+  "alignment": "Chaotic Neutral",
+  "ac": 14,
+  "acType": "jury-rigged armor",
+  "hp": 22,
+  "hpFormula": "5d6 + 5",
+  "speed": "25 ft.",
+  "abilities": {
+    "str": 8,
+    "dex": 16,
+    "con": 12,
+    "int": 16,
+    "wis": 10,
+    "cha": 12
+  },
+  "savingThrows": "",
+  "skills": "Arcana +5, Sleight of Hand +5, Tinker's Tools +5",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 60 ft., Passive Perception 10",
+  "languages": "Common, Goblin",
+  "cr": "1",
+  "xp": "200",
+  "features": [
+    {
+      "name": "Nimble Escape",
+      "text": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+    },
+    {
+      "name": "Non-Combatant",
+      "text": "Fizzpop won't enter the Dripfort and won't engage in combat. Any attacks directed at her are deflected by one of her many defensive gadgets (DM's discretion - she's not meant to be killable by the players)."
+    }
+  ],
+  "actions": [],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "A goblin inventor who lives alone in a maintenance closet in the Eastern Pipes, surrounded by salvaged junk and dangerous prototypes. She has singed eyebrows, bottle-bottom goggles, and a manic energy that borders on worrying. She speaks at approximately twice the speed of a normal goblin and rarely finishes a sentence before starting a new one. She built the Scumskimmer, a barrel-boat coated in rendered troll fat that can ferry goblins across the sludge moat. She will not enter the Dripfort or engage in combat.",
+    "encounters": {
+      "description": "Found in her workshop behind a rusty metal door covered in scratched warnings at the dead end of a narrow service tunnel in the Eastern Pipes. If recruited, she hauls the Scumskimmer to the moat's edge.",
+      "groups": [
+        { "cr": "1", "creatures": "Fizzpop alone in her workshop", "treasure": "None (she wants the grappling hook, 25 ft. of silk rope, and the acid vial as payment)" }
+      ]
+    }
+  }
+}

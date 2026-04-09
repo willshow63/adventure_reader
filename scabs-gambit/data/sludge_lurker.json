@@ -1,0 +1,49 @@
+{
+  "monsterId": "sludge_lurker",
+  "name": "Sludge Lurker",
+  "size": "Medium",
+  "type": "Ooze",
+  "alignment": "Unaligned",
+  "ac": 8,
+  "acType": "",
+  "hp": 30,
+  "hpFormula": "4d8 + 12",
+  "speed": "15 ft., swim 15 ft.",
+  "abilities": { "str": 13, "dex": 6, "con": 16, "int": 1, "wis": 6, "cha": 1 },
+  "savingThrows": "",
+  "skills": "",
+  "damageVulnerabilities": "",
+  "damageResistances": "Acid",
+  "damageImmunities": "Poison, Psychic",
+  "conditionImmunities": "Blinded, Charmed, Deafened, Exhaustion, Frightened, Prone",
+  "senses": "Blindsight 60 ft. (blind beyond this radius), Passive Perception 8",
+  "languages": "",
+  "cr": "1",
+  "xp": "200",
+  "features": [
+    { "name": "False Appearance", "text": "While motionless, the sludge lurker is indistinguishable from a normal puddle of sewer water." },
+    { "name": "Engulf", "text": "When a creature enters the lurker's space for the first time on a turn or starts its turn there, the lurker can attempt to engulf it. The creature must succeed on a DC 12 Dexterity saving throw or be engulfed. An engulfed creature is restrained and takes 2d6 acid damage at the start of each of its turns. A creature can escape with a DC 12 Strength check as an action." }
+  ],
+  "actions": [
+    { "name": "Pseudopod", "attackType": "Melee Weapon Attack", "toHit": "+3 to hit", "reach": "reach 5 ft.", "target": "one target", "damage": "4 (1d6 + 1) bludgeoning damage plus 3 (1d6) acid damage." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "An ooze that disguises itself as an ordinary puddle of sewer water on the Blackflow tunnel floor. It lies perfectly still, too uniform in shape, slightly warm to the touch. When a creature steps into its space, it attempts to engulf and dissolve them with corrosive acid. A DC 14 Perception check spots the lurker before stepping in it.",
+    "encounters": {
+      "description": "Found lurking on the floor of the Blackflow tunnels, disguised as normal puddles.",
+      "groups": [
+        { "cr": "1", "creatures": "1 sludge lurker disguised as a puddle", "treasure": "None" }
+      ]
+    },
+    "signs": [
+      { "roll": "1", "text": "A puddle on the tunnel floor that seems too still, too uniform in shape. It's slightly warm at the edges." }
+    ]
+  }
+}

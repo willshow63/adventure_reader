@@ -1,0 +1,46 @@
+{
+  "monsterId": "goat",
+  "name": "Goat",
+  "size": "Medium",
+  "type": "Beast",
+  "alignment": "Unaligned",
+  "ac": 10,
+  "acType": "",
+  "hp": 4,
+  "hpFormula": "1d8",
+  "speed": "40 ft.",
+  "abilities": { "str": 12, "dex": 10, "con": 11, "int": 2, "wis": 10, "cha": 5 },
+  "savingThrows": "",
+  "skills": "",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Passive Perception 10",
+  "languages": "",
+  "cr": "0",
+  "xp": "10",
+  "features": [
+    { "name": "Charge", "text": "If the goat moves at least 20 feet straight toward a target and then hits it with a ram attack on the same turn, the target takes an extra 2 (1d4) bludgeoning damage. If the target is a creature, it must succeed on a DC 10 Strength saving throw or be knocked prone." },
+    { "name": "Sure-Footed", "text": "The goat has advantage on Strength and Dexterity saving throws made against effects that would knock it prone." }
+  ],
+  "actions": [
+    { "name": "Ram", "attackType": "Melee Weapon Attack", "toHit": "+3 to hit", "reach": "reach 5 ft.", "target": "one target", "damage": "3 (1d4 + 1) bludgeoning damage." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "The Grimebacks keep a small herd of 12 goats in a pen in the Dripfort, stolen in surface raids over the past year. The goats provide milk, meat, and bones. They are surprisingly content living underground and have grown fat on a diet of garbage and sewer mushrooms. If a goat is attacked, the rest panic, jumping the wall and scattering throughout the Dripfort - creating significant noise and chaos that could serve as an excellent distraction or a disaster.",
+    "encounters": {
+      "description": "Found in the goat pen (Location 7) in the Dripfort, adjacent to Rattooth's quarters.",
+      "groups": [
+        { "cr": "0", "creatures": "12 goats in the pen (3 in the indoor pen, rest outside)", "treasure": "None" }
+      ]
+    }
+  }
+}

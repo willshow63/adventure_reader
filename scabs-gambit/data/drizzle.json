@@ -1,0 +1,67 @@
+{
+  "monsterId": "drizzle",
+  "name": "Drizzle",
+  "size": "Small",
+  "type": "Humanoid (goblinoid)",
+  "alignment": "Neutral",
+  "ac": 14,
+  "acType": "leather armor",
+  "hp": 18,
+  "hpFormula": "4d6 + 4",
+  "speed": "25 ft.",
+  "abilities": {
+    "str": 8,
+    "dex": 16,
+    "con": 12,
+    "int": 12,
+    "wis": 14,
+    "cha": 10
+  },
+  "savingThrows": "",
+  "skills": "Deception +4, Stealth +7, Animal Handling +4, Perception +4",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 60 ft., Passive Perception 14",
+  "languages": "Common, Goblin",
+  "cr": "1",
+  "xp": "200",
+  "features": [
+    {
+      "name": "Nimble Escape",
+      "text": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Dagger",
+      "attackType": "Melee or Ranged Weapon Attack",
+      "toHit": "+5 to hit",
+      "reach": "reach 5 ft. or range 20/60 ft.",
+      "target": "one target",
+      "damage": "5 (1d4 + 3) piercing damage."
+    }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "A quiet, careful Snotrocket goblin spy with sharp eyes and a talent for being overlooked. She has been embedded in the Grimeback kitchens for a month, feeding intelligence to King Scab via trained sewer rats. She speaks in a rapid, hushed voice and is constantly watching the door. She's under increasing suspicion - Blort has been watching her more closely lately, and she knows her cover won't last much longer. She has secretly bred and trained four giant sewer roaches in a hidden pen behind the larder as an escape plan.",
+    "encounters": {
+      "description": "Found working in the Dripfort kitchens as an assistant to Curdface the cook. After midnight, the kitchen is empty and she can speak freely.",
+      "groups": [
+        { "cr": "1", "creatures": "Drizzle alone (private conversation possible after midnight or with a distraction)", "treasure": "None" }
+      ]
+    },
+    "behavior": [
+      { "roll": "1", "text": "Working in the kitchens, keeping her head down and not making eye contact with anyone." },
+      { "roll": "2", "text": "Tending to her hidden giant sewer roaches behind the larder." },
+      { "roll": "3", "text": "Sending intelligence via trained sewer rats to King Scab." }
+    ]
+  }
+}

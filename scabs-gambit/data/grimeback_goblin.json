@@ -1,0 +1,58 @@
+{
+  "monsterId": "grimeback_goblin",
+  "name": "Grimeback Goblin",
+  "size": "Small",
+  "type": "Humanoid (goblinoid)",
+  "alignment": "Chaotic Evil",
+  "ac": 12,
+  "acType": "unarmored",
+  "hp": 7,
+  "hpFormula": "2d6",
+  "speed": "25 ft.",
+  "abilities": { "str": 8, "dex": 14, "con": 11, "int": 8, "wis": 9, "cha": 6 },
+  "savingThrows": "",
+  "skills": "",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 60 ft., Passive Perception 9",
+  "languages": "Common, Goblin",
+  "cr": "1/4",
+  "xp": "50",
+  "features": [
+    { "name": "Nimble Escape", "text": "The goblin can take the Disengage or Hide action as a bonus action on each of its turns." },
+    { "name": "Treasure", "text": "2d6 cp" }
+  ],
+  "actions": [
+    { "name": "Short Sword", "attackType": "Melee Weapon Attack", "toHit": "+4 to hit", "reach": "reach 5 ft.", "target": "one target", "damage": "5 (1d6 + 2) slashing damage." },
+    { "name": "Sling", "attackType": "Ranged Weapon Attack", "toHit": "+4 to hit", "reach": "range 30/120 ft.", "target": "one target", "damage": "4 (1d4 + 2) bludgeoning damage." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "The rank-and-file grunts of the Grimeback gang, a mid-tier goblin outfit operating out of the old waterworks district in the Blackstone sewers. They mark themselves with a streak of grey clay across their foreheads. Individually weak and cowardly, they rely on numbers and ambush tactics. Two weeks ago, the Grimebacks swarmed a group of wounded adventurers and killed them all, seizing three powerful magic items that have made the gang a terror in the tunnels.",
+    "legendsAndLore": [
+      { "dc": 10, "text": "Grimebacks are a mid-tier sewer gang identifiable by the grey clay streaks on their foreheads. They've become unusually aggressive in recent weeks." },
+      { "dc": 15, "text": "The Grimebacks ambushed a party of surface adventurers and stole powerful magic items. Their boss, Mogrot the Wide, is planning a full-scale raid on Snotrocket territory." }
+    ],
+    "encounters": {
+      "description": "Found throughout the Grimeback stronghold known as the Dripfort, a fortified defunct pumping station, and occasionally on patrol in the Blackflow tunnels.",
+      "groups": [
+        { "cr": "1/4-1", "creatures": "1d4 Grimeback goblins in general shacks (sleeping after 10 PM)", "treasure": "2d6 cp each, one goblin trinket per shack" },
+        { "cr": "1-2", "creatures": "5-8 Grimeback goblins at the gambling den or barbery, sometimes mixed with Grimeback thugs", "treasure": "Copper pieces and small trinkets from gambling stakes" }
+      ]
+    },
+    "behavior": [
+      { "roll": "1", "text": "Sleeping in piles on rag beds in their shacks." },
+      { "roll": "2", "text": "Gambling at the dice table or playing Rat Race." },
+      { "roll": "3", "text": "Drinking sludge-wine at the barbery and watching haircuts." },
+      { "roll": "4", "text": "Hauling food from the larder to the kitchens." }
+    ]
+  }
+}

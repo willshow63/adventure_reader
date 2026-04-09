@@ -1,0 +1,51 @@
+{
+  "monsterId": "pipe_spider",
+  "name": "Pipe Spider",
+  "size": "Large",
+  "type": "Beast",
+  "alignment": "Unaligned",
+  "ac": 14,
+  "acType": "natural armor",
+  "hp": 26,
+  "hpFormula": "4d10 + 4",
+  "speed": "30 ft., climb 30 ft.",
+  "abilities": { "str": 14, "dex": 16, "con": 12, "int": 2, "wis": 11, "cha": 4 },
+  "savingThrows": "",
+  "skills": "Stealth +7",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Blindsight 10 ft., Darkvision 60 ft., Passive Perception 10",
+  "languages": "",
+  "cr": "1",
+  "xp": "200",
+  "features": [
+    { "name": "Spider Climb", "text": "The spider can climb difficult surfaces, including upside down on ceilings, without needing to make an ability check." },
+    { "name": "Web Sense", "text": "While in contact with a web, the spider knows the exact location of any other creature in contact with the same web." },
+    { "name": "Web Walker", "text": "The spider ignores movement restrictions caused by webbing." }
+  ],
+  "actions": [
+    { "name": "Bite", "attackType": "Melee Weapon Attack", "toHit": "+5 to hit", "reach": "reach 5 ft.", "target": "one creature", "damage": "7 (1d8 + 3) piercing damage. The target must make a DC 11 Constitution saving throw, taking 9 (2d8) poison damage on a failed save, or half as much on a successful one. If the poison reduces the target to 0 HP, the target is stable but poisoned for 1 hour, and paralyzed while poisoned." },
+    { "name": "Web (Recharge 5-6)", "attackType": "Ranged Weapon Attack", "toHit": "+5 to hit", "reach": "range 30/60 ft.", "target": "one creature", "damage": "The target is restrained by webbing. A restrained creature can use its action to make a DC 12 Strength check, bursting the web on a success. The web can also be destroyed (AC 10, 5 HP, vulnerability to fire, immunity to bludgeoning, poison, and psychic damage)." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "A spider the size of a goblin that lurks in the pipe junctions of the Blackflow, spinning elaborate webs across entire tunnel intersections. It sits motionless at the center of its web, ambushing from above when prey blunders into the sticky threads. If spotted before it attacks, the party can take a ten-minute detour around the junction to avoid it entirely. The spider does not pursue creatures that leave its web zone.",
+    "encounters": {
+      "description": "Found at pipe junctions in the Blackflow tunnels, sitting in the center of webs that span the entire passage.",
+      "groups": [
+        { "cr": "1", "creatures": "1 pipe spider in its web", "treasure": "None" }
+      ]
+    },
+    "signs": [
+      { "roll": "1", "text": "A thin, translucent thread stretches from your fingers up into the darkness above, connecting to an elaborate web spanning the entire junction." }
+    ]
+  }
+}

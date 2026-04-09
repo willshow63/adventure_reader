@@ -1,0 +1,94 @@
+{
+  "monsterId": "mogrot_the_wide",
+  "name": "Mogrot the Wide",
+  "size": "Small",
+  "type": "Humanoid (goblinoid)",
+  "alignment": "Neutral Evil",
+  "ac": 17,
+  "acType": "studded leather armor, magical enhancement",
+  "hp": 85,
+  "hpFormula": "15d6 + 30",
+  "speed": "15 ft., fly 30 ft.",
+  "abilities": {
+    "str": 8,
+    "dex": 16,
+    "con": 15,
+    "int": 12,
+    "wis": 10,
+    "cha": 20
+  },
+  "savingThrows": "",
+  "skills": "Arcana +5, Intimidation +9, Deception +9",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 120 ft., Passive Perception 10",
+  "languages": "Goblin, Common, Primordial",
+  "cr": "11",
+  "xp": "7200",
+  "features": [
+    {
+      "name": "Sludge Sight",
+      "text": "Mogrot can see through sludge, mud, and dirty water as though it were clear glass."
+    },
+    {
+      "name": "Flight",
+      "text": "Mogrot can fly due to his warlock pact. He prefers not to - it's undignified - but will do so if threatened."
+    },
+    {
+      "name": "Mirror Images",
+      "text": "Once per day, as a free action, Mogrot can summon 5 illusory duplicates of himself. Each duplicate has 1 HP and an AC of 13. When a creature attacks Mogrot, it rolls 1d6 - on a 1, the attack hits Mogrot; on any other result, it hits a duplicate. Duplicates disappear when hit."
+    },
+    {
+      "name": "Final Eruption",
+      "text": "When Mogrot drops to 0 HP, his body erupts in green flame. Every creature within 15 feet takes 6d6 fire damage (DC 14 Dexterity saving throw for half)."
+    },
+    {
+      "name": "Spellcasting",
+      "text": "Mogrot is a 13th-level spellcaster. His spellcasting ability is Charisma (spell save DC 17, +9 to hit with spell attacks). He has the following spells:<br><br>Cantrips (at will): chill touch, eldritch blast, mage hand, prestidigitation<br><br>1st-7th level (3 5th-level slots): detect magic, fireball, fly, force cage, invisibility, suggestion, feeblemind, counterspell"
+    }
+  ],
+  "actions": [
+    {
+      "name": "Eldritch Blast",
+      "attackType": "Ranged Spell Attack",
+      "toHit": "+9 to hit",
+      "reach": "range 120 ft.",
+      "target": "three beams",
+      "damage": "10 (1d10 + 5) force damage per beam."
+    }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "The fattest goblin in the Blackstone sewers and possibly the most dangerous. Easily three times the width of a normal goblin, he overflows his toilet-throne on all sides. He wears a crown of bent copper pipe and a necklace of rat skulls. He established a pact with something foul - the orange glow in his eyes and the green fire at his fingertips suggest something elemental and hungry. He sits in the reinforced pump control room on the upper level and rarely leaves. He rules through fear, laziness, and overwhelming magical power. A level 13 Warlock who massively outclasses the Filthy Few - awakening him is catastrophic.",
+    "encounters": {
+      "description": "Always found in his control room on the upper level (Location 11c), sleeping on his toilet-throne. Two Grimeback thugs guard the locked door at all times. Not using Stealth in this room automatically wakes him.",
+      "groups": [
+        { "cr": "11+", "creatures": "Mogrot alone in his locked control room, with 2 Grimeback thug guards outside the door", "treasure": "3 potions of greater healing (4d4+4), a dagger +1, Oil of Sharpness, Bag of Chaos Beans, 432 gp, 83 pp, 3 fire opals (500 gp each)" }
+      ]
+    },
+    "behavior": [
+      { "roll": "1", "text": "Sleeping on his toilet-throne, snoring loudly." },
+      { "roll": "2", "text": "If awakened, does not look surprised - looks annoyed. Green fire licks his fingertips as rusted valve wheels on the walls begin to glow." },
+      { "roll": "3", "text": "If the crew retreats, does not pursue (too fat, too lazy) but raises the alarm and bellows for guards." }
+    ],
+    "loot": {
+      "title": "Mogrot's Control Room",
+      "description": "Four locked chests (DC 12 to pick) contain Mogrot's hoard:",
+      "dieType": "d4",
+      "table": [
+        { "roll": "1", "text": "3 potions of healing (4d4+4 HP each)" },
+        { "roll": "2", "text": "A dagger +1, Oil of Sharpness (+3 attack/damage for 1 hour), Bag of Chaos Beans" },
+        { "roll": "3", "text": "432 gold pieces, 83 platinum pieces" },
+        { "roll": "4", "text": "3 fire opals (worth 500 gp each)" }
+      ]
+    }
+  }
+}

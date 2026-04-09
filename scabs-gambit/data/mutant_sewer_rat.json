@@ -1,0 +1,55 @@
+{
+  "monsterId": "mutant_sewer_rat",
+  "name": "Mutant Sewer Rat",
+  "size": "Small",
+  "type": "Beast",
+  "alignment": "Unaligned",
+  "ac": 12,
+  "acType": "",
+  "hp": 9,
+  "hpFormula": "2d6 + 2",
+  "speed": "30 ft.",
+  "abilities": { "str": 7, "dex": 15, "con": 12, "int": 2, "wis": 10, "cha": 4 },
+  "savingThrows": "",
+  "skills": "",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 30 ft., Passive Perception 10",
+  "languages": "",
+  "cr": "1/8",
+  "xp": "25",
+  "features": [
+    { "name": "Keen Smell", "text": "The rat has advantage on Wisdom (Perception) checks that rely on smell." },
+    { "name": "Pack Tactics", "text": "The rat has advantage on attack rolls against a creature if at least one of the rat's allies is within 5 feet of the creature and the ally isn't incapacitated." }
+  ],
+  "actions": [
+    { "name": "Bite", "attackType": "Melee Weapon Attack", "toHit": "+4 to hit", "reach": "reach 5 ft.", "target": "one target", "damage": "4 (1d4 + 2) piercing damage. The target must succeed on a DC 11 Constitution saving throw or be poisoned until the end of its next turn." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "Bloated rats the size of terriers that infest the Blackflow tunnels. Their eyes glow faintly green from chemical exposure, their fur is patchy, and their teeth are yellowed and far too long. Mutated by magical contamination in the factory runoff, they are territorial but mostly cowardly, swarming when they sense weakness but scattering from fire and loud sudden noises.",
+    "legendsAndLore": [
+      { "dc": 10, "text": "The mutant rats in the Blackflow are territorial but mostly cowardly. They swarm when they sense weakness but scatter from fire and loud, sudden noises." },
+      { "dc": 16, "text": "The chemical runoff in the Blackflow has mild magical contamination, likely from an alchemist or wizard's shop above. This is what's mutating the local wildlife. The worst contamination is near the factory outflow pipes." }
+    ],
+    "encounters": {
+      "description": "Found in packs throughout the Blackflow tunnels, the chemically contaminated drainage system between Snotrocket territory and the Dripfort.",
+      "groups": [
+        { "cr": "1/2-1", "creatures": "4 mutant sewer rats emerging from cracked pipes", "treasure": "None" },
+        { "cr": "1-2", "creatures": "6 mutant sewer rats fighting over goblin remains", "treasure": "None" }
+      ]
+    },
+    "signs": [
+      { "roll": "1", "text": "Skittering sounds along the tunnel walls, shapes too big to be normal rats moving in the chemical fog." },
+      { "roll": "2", "text": "Faint green-glowing eyes watching from inside cracked pipes." }
+    ]
+  }
+}

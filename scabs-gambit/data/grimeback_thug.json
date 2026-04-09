@@ -1,0 +1,57 @@
+{
+  "monsterId": "grimeback_thug",
+  "name": "Grimeback Thug",
+  "size": "Small",
+  "type": "Humanoid (goblinoid)",
+  "alignment": "Chaotic Evil",
+  "ac": 16,
+  "acType": "hide armor, shield",
+  "hp": 14,
+  "hpFormula": "4d6",
+  "speed": "25 ft.",
+  "abilities": { "str": 10, "dex": 14, "con": 11, "int": 8, "wis": 9, "cha": 6 },
+  "savingThrows": "",
+  "skills": "Athletics +2, Perception +1, Stealth +4, Survival +1",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 60 ft., Passive Perception 10",
+  "languages": "Common, Goblin",
+  "cr": "1/2",
+  "xp": "100",
+  "features": [
+    { "name": "Nimble Escape", "text": "The thug can take the Disengage or Hide action as a bonus action on each of its turns." },
+    { "name": "Treasure", "text": "1d6 sp" }
+  ],
+  "actions": [
+    { "name": "Scimitar", "attackType": "Melee Weapon Attack", "toHit": "+4 to hit", "reach": "reach 5 ft.", "target": "one target", "damage": "5 (1d6 + 2) slashing damage." },
+    { "name": "Shortbow", "attackType": "Ranged Weapon Attack", "toHit": "+4 to hit", "reach": "range 80/320 ft.", "target": "one target", "damage": "5 (1d6 + 2) piercing damage." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "The veteran fighters of the Grimeback gang, better armed and armored than the common goblins. Thugs serve as bridge guards, watchtower sentries, patrol leaders, and barracks muscle. They are the backbone of the Dripfort's defense and rotate through guard shifts around the clock.",
+    "encounters": {
+      "description": "Found guarding key positions in the Dripfort and patrolling the Blackflow tunnels beyond Grimeback territory.",
+      "groups": [
+        { "cr": "2-3", "creatures": "6 Grimeback thugs stationed at the pipe bridge in pairs", "treasure": "1d6 sp each" },
+        { "cr": "1-2", "creatures": "2 Grimeback thugs at the watchtower", "treasure": "1d6 sp each" },
+        { "cr": "2-4", "creatures": "4 Grimeback thugs on Blackflow patrol (sometimes with 1 hexer)", "treasure": "1d6 sp each" },
+        { "cr": "3-4", "creatures": "8 Grimeback thugs sleeping in the barracks (4 on duty elsewhere)", "treasure": "1d6 sp each, plus communal weapon stores" }
+      ]
+    },
+    "behavior": [
+      { "roll": "1", "text": "Standing guard at the pipe bridge, posted in pairs at each end and the middle." },
+      { "roll": "2", "text": "Patrolling the Blackflow tunnels in groups of four." },
+      { "roll": "3", "text": "Sleeping in the barracks with weapons beside them." },
+      { "roll": "4", "text": "Drinking off-duty at the gambling den or barbery (no armor, weapons nearby)." },
+      { "roll": "5", "text": "Standing watch on the upper-level guard platform outside Mogrot's quarters." }
+    ]
+  }
+}

@@ -191,68 +191,6 @@
     padding: 0; color: inherit;
   }
 
-  /* ========== STAT BLOCKS ========== */
-  .stat-block {
-    background: rgba(255,255,255,0.3);
-    padding: 18px 20px;
-    margin: 20px 0;
-    border-top: 4px solid var(--magenta);
-    border-bottom: 4px solid var(--magenta);
-  }
-  .stat-block .monster-name {
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 1.8em; font-weight: 700;
-    font-variant: small-caps; letter-spacing: 1px;
-    color: var(--magenta); margin: 0; line-height: 1.1;
-  }
-  .stat-block .monster-type {
-    font-style: italic; font-size: 0.92em;
-    margin: 0 0 6px 0; color: var(--text); text-indent: 0;
-  }
-  .stat-block .npc-description {
-    font-style: italic; margin: 0 0 10px 0;
-    font-size: 0.92em; text-indent: 0; line-height: 1.4;
-  }
-  .stat-block .divider {
-    height: 3px; border: none; margin: 8px 0;
-    background: linear-gradient(to right, var(--magenta), var(--magenta) 60%, transparent);
-  }
-  .stat-block .basic-stats p {
-    margin: 2px 0; text-indent: 0; font-size: 0.92em;
-  }
-  .stat-block .secondary-stats p {
-    margin: 2px 0; text-indent: 0; font-size: 0.92em;
-  }
-  .stat-block .stat-label { font-weight: 700; }
-  .stat-block .abilities {
-    display: flex; justify-content: space-between;
-    text-align: center; margin: 0; padding: 6px 0;
-    color: var(--magenta);
-  }
-  .stat-block .ability { flex: 1; }
-  .stat-block .ability-name {
-    font-weight: 700; text-transform: uppercase; font-size: 0.8em;
-    letter-spacing: 0.5px;
-  }
-  .stat-block .ability-score { font-size: 0.92em; color: var(--text); }
-  .stat-block .section-header {
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 1.3em; font-variant: small-caps; font-weight: 700;
-    color: var(--magenta); letter-spacing: 0.5px;
-    border-bottom: 1.5px solid var(--magenta);
-    margin: 14px 0 6px 0; padding-bottom: 2px;
-  }
-  .stat-block .feature,
-  .stat-block .action { margin: 8px 0; font-size: 0.92em; line-height: 1.4; }
-  .stat-block .feature p,
-  .stat-block .action p { text-indent: 0; margin: 2px 0; font-size: inherit; }
-  .stat-block .feature-name,
-  .stat-block .action-name { font-weight: 700; font-style: italic; }
-  .stat-block .attack-type { font-style: italic; }
-  .stat-block .spell-list { text-indent: 0; margin: 2px 0; font-size: 0.92em; }
-  .stat-block .spell-list li { text-indent: 0; font-size: inherit; }
-  .stat-block .treasure { margin-top: 10px; font-size: 0.92em; text-indent: 0; }
-
   /* Read-aloud box */
   .read-aloud {
     background: var(--rose-fill);
@@ -408,6 +346,8 @@
     h2 { font-size: 1.3em; }
   }
 </style>
+<link rel="stylesheet" href="../shared/css/statblock.css">
+<script src="../shared/js/statblock-renderer.js"></script>
 </head>
 <body class="has-nav">
 
@@ -1345,240 +1285,69 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  // --- Detect and wrap stat blocks ---
-  // Pattern: h3 → <p><em>type line</em></p> → <p><strong>Armor Class</strong>...
+  // --- Render stat blocks from JSON data ---
+  var statblockFiles = {
+    'Grimeback Goblin': 'grimeback_goblin.json',
+    'Grimeback Thug': 'grimeback_thug.json',
+    'Grimeback Hexer': 'grimeback_hexer.json',
+    'Mutant Sewer Rat': 'mutant_sewer_rat.json',
+    'Sewer Rat Swarm': 'sewer_rat_swarm.json',
+    'Sludge Lurker': 'sludge_lurker.json',
+    'Pipe Spider': 'pipe_spider.json',
+    'Sewer Imp (Snik)': 'sewer_imp.json',
+    'Giant Sewer Roach (Mount)': 'giant_sewer_roach.json',
+    'Goat': 'goat.json',
+    'Gunk the Troll': 'gunk_the_troll.json',
+    'Fizzpop the Tinker': 'fizzpop_the_tinker.json',
+    'Drizzle': 'drizzle.json',
+    'Rattooth': 'rattooth.json',
+    'Skivvy': 'skivvy.json',
+    'Blort': 'blort.json',
+    'Gristla': 'gristla.json',
+    'Mogrot the Wide': 'mogrot_the_wide.json'
+  };
+
   document.querySelectorAll('.section-appendix').forEach(function(sec) {
     var children = Array.from(sec.children);
     var i = 0;
 
     while (i < children.length) {
       var el = children[i];
+      if (el.tagName === 'H3' && statblockFiles[el.textContent.trim()]) {
+        var name = el.textContent.trim();
+        var jsonFile = statblockFiles[name];
 
-      // Detect stat block start: h3 followed by type line then AC
-      if (el.tagName !== 'H3') { i++; continue; }
-
-      // Look ahead for type line (italic) and AC line
-      var next1 = children[i + 1];
-      var next2 = children[i + 2];
-
-      // Check if next element has italic content (type line)
-      var hasTypeLine = next1 && next1.tagName === 'P' && next1.querySelector('em');
-
-      // Find AC line - might be next1, next2, or further (Cast section has description paragraphs)
-      var acIdx = -1;
-      for (var look = i + 1; look < Math.min(i + 6, children.length); look++) {
-        if (children[look] && children[look].textContent.indexOf('Armor Class') >= 0) {
-          acIdx = look; break;
+        // Collect elements belonging to this stat block (until next h3/h2 or end)
+        var toRemove = [el];
+        var j = i + 1;
+        while (j < children.length && children[j].tagName !== 'H3' && children[j].tagName !== 'H2') {
+          toRemove.push(children[j]);
+          j++;
         }
-      }
 
-      if (acIdx < 0) { i++; continue; } // Not a stat block
+        // Create container, preserve the h3's id for navigation
+        var container = document.createElement('div');
+        container.id = el.id;
+        container.style.scrollMarginTop = '24px';
+        el.before(container);
 
-      // Build the stat block
-      var block = document.createElement('div');
-      block.className = 'stat-block';
-      el.before(block); // insert block where h3 was
+        // Remove old raw HTML
+        toRemove.forEach(function(r) { r.remove(); });
 
-      // Monster name
-      var nameDiv = document.createElement('div');
-      nameDiv.className = 'monster-name';
-      nameDiv.textContent = el.textContent;
-      nameDiv.id = el.id;
-      block.appendChild(nameDiv);
-      el.remove();
+        // Fetch and render
+        (function(c, f) {
+          fetch('data/' + f)
+            .then(function(r) { return r.json(); })
+            .then(function(data) { StatblockRenderer.render(data, c); })
+            .catch(function(e) { c.textContent = 'Failed to load stat block: ' + e.message; });
+        })(container, jsonFile);
 
-      // Description paragraphs and type line (everything between h3 and AC)
-      // Re-read children since DOM changed
-      children = Array.from(sec.children);
-      var blockIdx = children.indexOf(block);
-      var j = blockIdx + 1;
-
-      // Collect elements between the block and the AC line
-      while (j < children.length && children[j].textContent.indexOf('Armor Class') < 0) {
-        var item = children[j];
-        if (item.tagName === 'P' && item.querySelector('em') &&
-            item.children.length === 1 && item.children[0].tagName === 'EM') {
-          // Type line (purely italic paragraph)
-          item.className = 'monster-type';
-          block.appendChild(item);
-        } else {
-          // NPC description paragraph
-          item.className = 'npc-description';
-          block.appendChild(item);
-        }
+        // Refresh children list since DOM changed
         children = Array.from(sec.children);
-        j = children.indexOf(block) + block.children.length;
+        i = 0;
+        continue;
       }
-
-      // Divider after name/type
-      block.appendChild(Object.assign(document.createElement('hr'), {className:'divider'}));
-
-      // Basic stats: AC, HP, Speed
-      var basicStats = document.createElement('div');
-      basicStats.className = 'basic-stats';
-      children = Array.from(sec.children);
-      j = children.indexOf(block) + 1;
-
-      while (j < children.length) {
-        var c = children[j];
-        var txt = c.textContent || '';
-        if (txt.indexOf('Armor Class') >= 0 || txt.indexOf('Hit Points') >= 0 || txt.indexOf('Speed') >= 0) {
-          // Wrap strong in stat-label span
-          var strong = c.querySelector('strong');
-          if (strong) { var sl = document.createElement('span'); sl.className = 'stat-label'; sl.textContent = strong.textContent; strong.replaceWith(sl); }
-          basicStats.appendChild(c);
-          children = Array.from(sec.children);
-          j = children.indexOf(block) + 1;
-        } else {
-          break;
-        }
-      }
-      block.appendChild(basicStats);
-
-      // Divider
-      block.appendChild(Object.assign(document.createElement('hr'), {className:'divider'}));
-
-      // Ability scores table → abilities div
-      children = Array.from(sec.children);
-      j = children.indexOf(block) + 1;
-      if (j < children.length && children[j].tagName === 'TABLE') {
-        var tbl = children[j];
-        var abilities = document.createElement('div');
-        abilities.className = 'abilities';
-        var ths = tbl.querySelectorAll('th');
-        var tds = tbl.querySelectorAll('td');
-        for (var k = 0; k < ths.length; k++) {
-          var ab = document.createElement('div');
-          ab.className = 'ability';
-          ab.innerHTML = '<div class="ability-name">' + ths[k].textContent + '</div>' +
-            '<div class="ability-score">' + (tds[k] ? tds[k].textContent : '') + '</div>';
-          abilities.appendChild(ab);
-        }
-        block.appendChild(abilities);
-        tbl.remove();
-
-        // Divider after abilities
-        block.appendChild(Object.assign(document.createElement('hr'), {className:'divider'}));
-      }
-
-      // Secondary stats + features + actions: everything until next h3/h2 or stat-block
-      var secondaryStats = document.createElement('div');
-      secondaryStats.className = 'secondary-stats';
-      var inSecondary = true;
-      var sectionLabels = ['Actions','Bonus Actions','Reactions','Legendary Actions','Villain Actions'];
-
-      children = Array.from(sec.children);
-      j = children.indexOf(block) + 1;
-
-      while (j < children.length) {
-        var c = children[j];
-        if (!c || c.tagName === 'H3' || c.tagName === 'H2' || c.classList.contains('stat-block')) break;
-
-        var txt = (c.textContent || '').trim();
-        var firstStrong = c.querySelector('strong');
-        var strongText = firstStrong ? firstStrong.textContent.trim() : '';
-
-        // Section headers: "Actions", "Bonus Actions", etc.
-        if (c.tagName === 'P' && firstStrong && sectionLabels.indexOf(strongText) >= 0 &&
-            strongText === txt) {
-          if (inSecondary && secondaryStats.children.length > 0) {
-            block.appendChild(secondaryStats);
-            block.appendChild(Object.assign(document.createElement('hr'), {className:'divider'}));
-            inSecondary = false;
-          }
-          var sh = document.createElement('div');
-          sh.className = 'section-header';
-          sh.textContent = strongText;
-          block.appendChild(sh);
-          c.remove();
-          children = Array.from(sec.children);
-          j = children.indexOf(block) + 1;
-          continue;
-        }
-
-        // Secondary stat lines (Skills, Senses, Languages, Challenge, Proficiency, Damage, Condition)
-        var secLabels = ['Skills','Senses','Languages','Challenge','Proficiency Bonus',
-          'Saving Throws','Damage Resistances','Damage Immunities','Damage Vulnerabilities',
-          'Condition Immunities'];
-        var isSecondary = false;
-        for (var s = 0; s < secLabels.length; s++) {
-          if (strongText.indexOf(secLabels[s]) >= 0) { isSecondary = true; break; }
-        }
-
-        if (isSecondary && inSecondary) {
-          if (firstStrong) { var sl = document.createElement('span'); sl.className = 'stat-label'; sl.textContent = firstStrong.textContent; firstStrong.replaceWith(sl); }
-          secondaryStats.appendChild(c);
-          children = Array.from(sec.children);
-          j = children.indexOf(block) + 1;
-          continue;
-        }
-
-        // End secondary stats section if we hit a non-secondary line
-        if (inSecondary && secondaryStats.children.length > 0) {
-          block.appendChild(secondaryStats);
-          block.appendChild(Object.assign(document.createElement('hr'), {className:'divider'}));
-          inSecondary = false;
-        }
-
-        // Treasure line
-        if (strongText === 'Treasure') {
-          c.className = 'treasure';
-          block.appendChild(c);
-          children = Array.from(sec.children);
-          j = children.indexOf(block) + 1;
-          continue;
-        }
-
-        // Spell lists (ul elements)
-        if (c.tagName === 'UL') {
-          c.className = 'spell-list';
-          block.appendChild(c);
-          children = Array.from(sec.children);
-          j = children.indexOf(block) + 1;
-          continue;
-        }
-
-        // Spellcasting paragraph (contains spell info)
-        if (strongText === 'Spellcasting.' || strongText.indexOf('Spellcasting') >= 0) {
-          var feat = document.createElement('div');
-          feat.className = 'feature';
-          feat.appendChild(c);
-          block.appendChild(feat);
-          children = Array.from(sec.children);
-          j = children.indexOf(block) + 1;
-          continue;
-        }
-
-        // Feature/action paragraphs (strong name followed by period then text)
-        if (firstStrong && strongText.indexOf('.') >= 0) {
-          var feat = document.createElement('div');
-          feat.className = 'feature';
-          // Re-tag the strong as feature-name
-          firstStrong.className = 'feature-name';
-          feat.appendChild(c);
-          block.appendChild(feat);
-          children = Array.from(sec.children);
-          j = children.indexOf(block) + 1;
-          continue;
-        }
-
-        // Generic paragraph - just a description, add as feature
-        c.className = 'feature';
-        c.style.textIndent = '0';
-        block.appendChild(c);
-        children = Array.from(sec.children);
-        j = children.indexOf(block) + 1;
-      }
-
-      // Append any remaining secondary stats
-      if (inSecondary && secondaryStats.children.length > 0) {
-        block.appendChild(secondaryStats);
-      }
-
-      // Restart scan
-      children = Array.from(sec.children);
-      i = 0;
-      continue;
+      i++;
     }
   });
 

@@ -1,0 +1,52 @@
+{
+  "monsterId": "sewer_imp",
+  "name": "Sewer Imp (Snik)",
+  "size": "Tiny",
+  "type": "Fiend (devil)",
+  "alignment": "Lawful Evil",
+  "ac": 13,
+  "acType": "",
+  "hp": 21,
+  "hpFormula": "6d4 + 6",
+  "speed": "20 ft., fly 40 ft.",
+  "abilities": { "str": 6, "dex": 17, "con": 13, "int": 11, "wis": 12, "cha": 14 },
+  "savingThrows": "",
+  "skills": "Deception +4, Insight +3, Persuasion +4, Stealth +5",
+  "damageVulnerabilities": "",
+  "damageResistances": "Cold; Bludgeoning, Piercing, and Slashing from Nonmagical Attacks that aren't Silvered",
+  "damageImmunities": "Fire, Poison",
+  "conditionImmunities": "Poisoned",
+  "senses": "Darkvision 120 ft., Passive Perception 11",
+  "languages": "Common, Infernal",
+  "cr": "1",
+  "xp": "200",
+  "features": [
+    { "name": "Shapechanger", "text": "The imp can polymorph into a rat (speed 20 ft.), a cockroach (20 ft., climb 20 ft.), or a spider (20 ft., climb 20 ft.), or back into its true form. Its statistics are the same in each form except for speed. Any equipment it wears or carries isn't transformed. It reverts to its true form if it dies." },
+    { "name": "Devil's Sight", "text": "Magical darkness doesn't impede the imp's darkvision." },
+    { "name": "Magic Resistance", "text": "The imp has advantage on saving throws against spells and other magical effects." },
+    { "name": "Invisibility", "text": "The imp magically turns invisible until it attacks or until its concentration ends. Any equipment the imp wears or carries is invisible with it." }
+  ],
+  "actions": [
+    { "name": "Sting (Bite in Beast Form)", "attackType": "Melee Weapon Attack", "toHit": "+5 to hit", "reach": "reach 5 ft.", "target": "one target", "damage": "5 (1d4 + 3) piercing damage, and the target must make a DC 11 Constitution saving throw, taking 10 (3d6) poison damage on a failed save, or half on a success." }
+  ],
+  "bonusActions": [],
+  "reactions": [],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "Snik is Blort's fiendish familiar, a tiny devil that lurks invisibly at the shaman's side. In the Dripfort, Snik subtly influences dice games at the gambling den by nudging dice mid-roll with an invisible hand. He can shapechange into a rat, cockroach, or spider. Snik has exceptional hearing and will secretly wake Blort if intruders make noise near the workshop.",
+    "encounters": {
+      "description": "Always found near Blort. At the gambling den before 2 AM, then at Blort's workshop afterward.",
+      "groups": [
+        { "cr": "1", "creatures": "1 sewer imp (invisible) accompanying Blort", "treasure": "None" }
+      ]
+    },
+    "behavior": [
+      { "roll": "1", "text": "Lurking invisibly near Blort at the gambling den, nudging dice to subtly influence games." },
+      { "roll": "2", "text": "Keeping watch in Blort's workshop, listening for intruders with exceptional hearing." }
+    ]
+  }
+}
