@@ -1,0 +1,181 @@
+/* Statblock renderer CSS — extracted from monster-statblock project */
+
+/* Base stat block - shared styles */
+.stat-block {
+    background: #f5f5f5;
+    padding: 20px;
+    border-top: 4px solid #184e4f;
+    border-bottom: 4px solid #184e4f;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Two-column layout via JS */
+.stat-block.two-column {
+    display: flex;
+    gap: 40px;
+    width: 840px;
+}
+
+.stat-col-1 {
+    width: 380px;
+    min-width: 380px;
+    border-right: 1px solid #184e4f;
+    padding-right: 20px;
+}
+
+.stat-col-2 {
+    width: 380px;
+    min-width: 380px;
+}
+
+/* Single-column layout */
+.stat-block.single-column {
+    display: block;
+    width: 450px;
+}
+
+/* Responsive: collapse to single column on narrow screens */
+@media (max-width: 900px) {
+    .stat-block.two-column {
+        display: block;
+        width: 450px;
+    }
+
+    .stat-col-1 {
+        width: auto;
+        min-width: auto;
+        border-right: none;
+        padding-right: 0;
+    }
+
+    .stat-col-2 {
+        width: auto;
+        min-width: auto;
+    }
+}
+
+/* Section headers avoid orphaning - handled by JS grouping */
+.section-start {
+    /* no special rules needed, just a wrapper */
+}
+
+/* Individual items avoid breaking */
+.feature, .action, .legendary-action, .villain-action {
+    /* handled by JS placement */
+}
+
+/* Header */
+.monster-name {
+    font-family: 'Times New Roman', serif;
+    font-size: 2em;
+    font-variant: small-caps;
+    font-weight: bold;
+    color: #184e4f;
+    margin: 0 0 0 0;
+    letter-spacing: 1px;
+}
+
+.monster-type {
+    font-style: italic;
+    margin: 0 0 10px 0;
+}
+
+/* Dividers */
+.divider {
+    height: 4px;
+    background: linear-gradient(to right, #184e4f, #184e4f 60%, transparent);
+    margin: 10px 0;
+    border: none;
+}
+
+/* Basic Stats */
+.basic-stats p { margin: 2px 0; }
+.stat-label { font-weight: bold; }
+
+/* Ability Scores */
+.abilities {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px 0;
+    color: #184e4f;
+}
+
+.ability { flex: 1; }
+
+.ability-name {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.ability-score { font-size: 1em; }
+
+/* Secondary Stats */
+.secondary-stats p { margin: 2px 0; }
+
+/* Section Headers - never orphan at bottom of column */
+.section-header {
+    font-size: 1.4em;
+    font-variant: small-caps;
+    color: #184e4f;
+    border-bottom: 2px solid #184e4f;
+    margin: 15px 0 5px 0;
+    padding-bottom: 2px;
+    break-after: avoid;
+}
+
+/* Features and Actions - individual items avoid breaking */
+.feature, .action { margin: 10px 0; break-inside: avoid; }
+
+.feature-name, .action-name {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.attack-type { font-style: italic; }
+.feature-text, .action-text { display: inline; }
+.action-continuation { margin-top: 8px; }
+
+/* Legendary Actions */
+.legendary-description { margin-bottom: 10px; }
+.legendary-action { margin: 5px 0; }
+.legendary-action-name { font-weight: bold; }
+
+/* Villain Actions */
+.villain-action { margin: 5px 0; }
+.villain-action-round { font-weight: bold; font-style: italic; }
+.villain-action-name { font-weight: bold; font-style: italic; }
+
+@media print {
+    .stat-block {
+        box-shadow: none;
+        border: none;
+        border-top: 4px solid #184e4f;
+        border-bottom: 4px solid #184e4f;
+        font-size: 11px;
+        padding: 10px;
+    }
+
+    .stat-block.two-column { gap: 30px; }
+
+    .monster-name { font-size: 1.6em; }
+
+    .section-header {
+        font-size: 1.2em;
+        margin: 10px 0 3px 0;
+    }
+
+    .feature, .action, .legendary-action, .villain-action { margin: 5px 0; }
+    .divider { margin: 5px 0; height: 3px; }
+    .abilities { margin: 5px 0; }
+
+    @page { size: letter; margin: 0.5in; }
+}
+
+/* Hidden measurer - used by JS to calculate section heights */
+.stat-block-measure {
+    position: absolute !important;
+    visibility: hidden !important;
+    pointer-events: none;
+}
