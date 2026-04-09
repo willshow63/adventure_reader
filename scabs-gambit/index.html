@@ -195,20 +195,13 @@
   .stat-block {
     border-top: 3px solid var(--magenta);
     border-bottom: 3px solid var(--magenta);
-    border-left: 3px solid var(--sage);
+    border-left: none;
+    border-right: none;
     background: rgba(255,255,255,0.5);
     box-shadow: none;
     font-family: 'Crimson Text', Georgia, serif;
     font-size: 10pt;
     line-height: 1.35;
-    position: relative;
-  }
-  /* Small triangle ornament at top-left of sage border */
-  .stat-block::before {
-    content: ''; position: absolute; top: -3px; left: -3px;
-    width: 0; height: 0; border-style: solid;
-    border-width: 8px 8px 0 0;
-    border-color: var(--magenta) transparent transparent transparent;
   }
   .monster-name { color: var(--magenta) !important; font-family: 'Crimson Text', Georgia, serif !important; }
   .monster-type { color: var(--text) !important; }
@@ -231,43 +224,60 @@
   .stat-block .ability-score { color: var(--text) !important; }
   /* Secondary stat labels in magenta */
   .stat-block .secondary-stats .stat-label { color: var(--magenta) !important; }
-  /* Section headers */
+  /* Section headers — Modesto Poster */
   .stat-block .section-header {
     color: var(--magenta) !important;
     border-bottom: 1.5px solid var(--magenta) !important;
-    font-family: 'Crimson Text', Georgia, serif !important;
+    font-family: "Modesto Poster", "modesto-poster", 'Cinzel', serif !important;
+    font-weight: 400 !important;
   }
   /* Feature/action names */
   .stat-block .feature-name, .stat-block .action-name { color: var(--text) !important; }
   /* Column divider */
   .stat-col-1 { border-right-color: var(--sage) !important; }
-  /* Tabs — magenta themed, not teal */
+  /* Tabs — gray inactive, white active, no green */
   .statblock-tab {
     color: var(--magenta) !important;
-    font-family: 'Crimson Text', Georgia, serif !important;
-    background: var(--sage-light) !important;
+    font-family: "Modesto Poster", "modesto-poster", 'Cinzel', serif !important;
+    font-weight: 400 !important;
+    font-variant: small-caps !important;
+    letter-spacing: 1px !important;
+    background: #d8d4cd !important;
+    border: none !important;
   }
-  .statblock-tab:hover { background: var(--edge-wash) !important; }
+  .statblock-tab:hover { background: #ccc8c0 !important; }
   .statblock-tab.active { background: rgba(255,255,255,0.5) !important; }
+  /* Kill the green top border from shared statblock.css on the stat-block when inside tabs */
+  .statblock-panel .stat-block { border-top: none; }
+  .statblock-panel .lore-block { border-top: none; }
   /* Lore block */
   .lore-block {
     border-top: 3px solid var(--magenta);
     border-bottom: 3px solid var(--magenta);
-    border-left: 3px solid var(--sage);
+    border-left: none;
+    border-right: none;
     background: rgba(255,255,255,0.5);
     box-shadow: none;
     font-family: 'Crimson Text', Georgia, serif;
     font-size: 10pt;
-    position: relative;
   }
-  .lore-block::before {
-    content: ''; position: absolute; top: -3px; left: -3px;
-    width: 0; height: 0; border-style: solid;
-    border-width: 8px 8px 0 0;
-    border-color: var(--magenta) transparent transparent transparent;
+  /* Prevent drop-cap leak into lore/stat blocks */
+  .lore-block p::first-letter,
+  .stat-block p::first-letter {
+    font-size: inherit !important; float: none !important;
+    line-height: inherit !important; padding: 0 !important;
+    color: inherit !important;
   }
-  .lore-title { color: var(--magenta) !important; font-family: 'Crimson Text', Georgia, serif !important; }
-  .lore-section-header { color: var(--magenta) !important; border-bottom-color: var(--magenta) !important; }
+  .lore-title {
+    color: var(--magenta) !important;
+    font-family: 'Crimson Text', Georgia, serif !important;
+  }
+  .lore-section-header {
+    color: var(--magenta) !important;
+    border-bottom-color: var(--magenta) !important;
+    font-family: "Modesto Poster", "modesto-poster", 'Cinzel', serif !important;
+    font-weight: 400 !important;
+  }
   .lore-table th { background: var(--magenta) !important; }
   /* Flexible widths */
   .stat-block.two-column { width: auto; max-width: 100%; }
