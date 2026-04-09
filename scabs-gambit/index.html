@@ -205,21 +205,20 @@
   }
   .monster-name { color: var(--magenta) !important; font-family: 'Crimson Text', Georgia, serif !important; }
   .monster-type { color: var(--text) !important; }
-  /* Replace gradient dividers with thin subtle rules */
+  /* Thick gradient dividers matching monster-statblock style */
   .stat-block .divider {
-    height: 1px !important;
-    background: var(--sage) !important;
-    margin: 8px 0 !important;
+    height: 4px !important;
+    background: linear-gradient(to right, var(--magenta), var(--magenta) 60%, transparent) !important;
+    margin: 10px 0 !important;
   }
   /* Stat labels in magenta */
   .stat-block .stat-label { color: var(--magenta) !important; font-weight: 700; }
-  /* Ability scores: magenta headers, thin top/bottom rules */
+  /* Ability scores: magenta headers, no extra borders (dividers handle separation) */
   .stat-block .abilities {
     color: var(--magenta) !important;
-    border-top: 1px solid var(--sage);
-    border-bottom: 1px solid var(--sage);
+    border: none;
     padding: 4px 0;
-    margin: 6px 0 !important;
+    margin: 0 !important;
   }
   .stat-block .ability-score { color: var(--text) !important; }
   /* Secondary stat labels in magenta */
