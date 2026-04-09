@@ -260,7 +260,8 @@
     font-family: 'Crimson Text', Georgia, serif;
     font-size: 10pt;
   }
-  /* Prevent drop-cap leak into lore/stat blocks */
+  /* Prevent text-indent and drop-cap leak into stat/lore blocks */
+  .stat-block p, .lore-block p { text-indent: 0 !important; }
   .lore-block p::first-letter,
   .stat-block p::first-letter {
     font-size: inherit !important; float: none !important;
