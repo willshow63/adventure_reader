@@ -1,0 +1,188 @@
+{
+  "monsterId": "king_scab",
+  "name": "King Scab",
+  "size": "Small",
+  "type": "Humanoid (goblinoid)",
+  "alignment": "Chaotic Neutral",
+  "ac": 14,
+  "acType": "leather armor",
+  "hp": 35,
+  "hpFormula": "10d6",
+  "speed": "25 ft.",
+  "abilities": {
+    "str": 6,
+    "dex": 18,
+    "con": 16,
+    "int": 18,
+    "wis": 10,
+    "cha": 6
+  },
+  "savingThrows": "Dex +7, Int +7",
+  "skills": "Stealth +7, Sleight of Hand +7, Perception +3, Intimidation +1",
+  "damageVulnerabilities": "",
+  "damageResistances": "",
+  "damageImmunities": "",
+  "conditionImmunities": "",
+  "senses": "Darkvision 60 ft., passive Perception 13",
+  "languages": "Common, Goblin",
+  "cr": "5",
+  "xp": "1,800",
+  "features": [
+    {
+      "name": "Nimble Escape",
+      "text": "Scab can take the Disengage or Hide action as a bonus action on each of his turns."
+    },
+    {
+      "name": "Stinky's Blessing",
+      "text": "Once per day when Scab drops to 0 HP, the residual power of Stinky stabilizes him automatically and he regains 1 HP. He involuntarily sneezes green gloop on the creature that downed him (DC 14 Dex or blinded for 1 round)."
+    },
+    {
+      "name": "Sewer Sovereign",
+      "text": "Snotrocket goblins within 30 feet of Scab cannot be frightened and have advantage on their next attack roll after Scab hits a target."
+    },
+    {
+      "name": "Aura of Stinky",
+      "text": "Scab carries the lingering, sacred reek of Stinky — his beloved snotrag — on his person at all times. Any creature that starts its turn within 10 feet of Scab and can smell must succeed on a DC 14 Constitution saving throw or be poisoned until the start of its next turn. Creatures that have been around Scab for more than 1 hour become accustomed to the smell and are immune to this effect. Snotrocket goblins are always immune."
+    },
+    {
+      "name": "Slippery",
+      "text": "Scab has advantage on ability checks and saving throws made to escape a grapple or restrain effect."
+    }
+  ],
+  "actions": [
+    {
+      "name": "Multiattack",
+      "text": "Scab makes two Rusty Cleaver attacks."
+    },
+    {
+      "name": "Rusty Cleaver",
+      "attackType": "Melee Weapon Attack",
+      "toHit": "+7 to hit",
+      "reach": "reach 5 ft.",
+      "target": "one target",
+      "damage": "8 (1d6 + 4) slashing damage plus 3 (1d6) poison damage from the filth caked on the blade."
+    },
+    {
+      "name": "Royal Sneeze",
+      "text": "(<b><i>Recharge 5-6</i></b>) Scab unleashes a powerful, magically-charged sneeze in a 15-foot cone. Each creature must make a DC 14 Dex save or take 3d8 force damage, be pushed 10 feet back, knocked prone, and forced to drop whatever they are holding. On a success, half damage, no push, no prone, no disarm. This is how he killed King Battle Battle Wee."
+    },
+    {
+      "name": "Cleaver Flourish",
+      "text": "Scab makes a single Rusty Cleaver attack. On a hit, the target must make a DC 14 Wisdom save or be frightened of Scab until the end of their next turn as he fixes them with his most regal glare."
+    },
+    {
+      "name": "Fling Filth",
+      "text": "<b><i>Ranged Attack:</i></b> +7 to hit, range 20 ft., one target. Scab scoops a handful of the foulest sewer muck and hurls it. 2d6 poison damage and the target has disadvantage on their next attack roll as they retch."
+    },
+    {
+      "name": "Bewilderment Bomb",
+      "text": "Scab throws a bewilderment bomb up to 30 feet to create a 15-foot radius cloud for 1 minute. Creatures in the area must make a DC 15 Constitution save or become incapacitated and move randomly (d8 direction) each turn. Those who succeed have disadvantage on attacks and ability checks until they leave the cloud."
+    }
+  ],
+  "bonusActions": [
+    {
+      "name": "Pocket Stink",
+      "text": "Scab cracks open a small vial of concentrated sewer essence. One creature within 5 feet must succeed on a DC 14 Con save or be poisoned and have their speed halved until the end of their next turn."
+    },
+    {
+      "name": "Boot Crown Rally",
+      "text": "Scab adjusts his boot crown with exaggerated dignity. All frightened allies within 30 feet can immediately repeat their saving throw against the frightened condition with advantage."
+    }
+  ],
+  "reactions": [
+    {
+      "name": "Meat Shield",
+      "text": "When Scab is hit by an attack, if an allied goblin is within 5 feet, Scab can redirect the attack to hit the ally instead. The king's survival is paramount. A true Snotrocket would understand."
+    },
+    {
+      "name": "Indignant Sneeze",
+      "text": "When a creature within 10 feet casts a spell targeting Scab, he reflexively sneezes. The caster must succeed on a DC 14 Con save or lose concentration (if concentrating) and have the spell's effect delayed by 1 round as mucus interferes with the magical energy."
+    }
+  ],
+  "legendaryActions": [],
+  "legendaryActionsDescription": "",
+  "lairActions": [],
+  "lairActionsDescription": "",
+  "villainActions": [],
+  "summary": {
+    "description": "Scab grew up the weakest, most bullied goblin in the Snotrocket Society — starved, tormented, and used as a punching bag by his own gang. One day, wandering the tunnels alone, he stumbled upon a filthy brown handkerchief floating in a pool of green gloop. Its stench was intoxicating. He hid it in his underpants, named it Stinky, and for the first time in his miserable life found something like happiness.<br><br>When King Battle Battle Wee led his Muck Marauders to exterminate the Snotrockets, Scab found himself cornered by the great king himself. In what he believed were his final moments, he pulled out Stinky and took one last enormous sniff. The sneeze that erupted sent Battle Battle Wee flying off his feet in a blast of green gloop. Scab snatched up the fallen cleaver, leapt on the king, and slit his throat. Holding Stinky high, he demanded fealty from every goblin in the sewers — and got it.<br><br>Now crowned with Battle Battle Wee's smelly old boot and armed with his rusty cleaver, Scab rules the Snotrocket Society from atop the highest trash heap in the Snot Pit. Stinky flies from a ceremonial pole as the gang's sacred standard, and its essence fuels their bewilderment bombs. Scab has proven sharper than anyone expected — cunning, ruthless, and fiercely protective of the Society that once tormented him.",
+    "legendsAndLore": [
+      {
+        "dc": 10,
+        "text": "Scab is the king of the Snotrocket Society, the most powerful goblin gang in the Blackstone sewers. He killed the previous king, Battle Battle Wee, in single combat and took his crown — a filthy old leather boot."
+      },
+      {
+        "dc": 14,
+        "text": "Scab rose to power through a magical sneeze powered by a putrid snotrag called Stinky. The rag is now the Snotrockets' most sacred relic, flown from a ceremonial pole above the Snot Pit. Threatening Stinky would be the fastest way to provoke every goblin in the sewers."
+      },
+      {
+        "dc": 18,
+        "text": "Before becoming king, Scab was the weakest and most bullied goblin in the Snotrocket Society. He is sharper and more cunning than any goblin has a right to be, but his charisma comes entirely from fear and the legend of Stinky — not personal magnetism. Without Stinky, Scab's hold on the Society would collapse."
+      }
+    ],
+    "signs": [
+      {
+        "roll": "1",
+        "text": "A waft of something unspeakably foul drifts through the tunnel — sacred, not accidental. You're near Snotrocket territory."
+      },
+      {
+        "roll": "2",
+        "text": "Crude graffiti on the tunnel wall: a stick figure goblin holding a flag, surrounded by wavy stink lines. Below it, scratched in Goblin: 'STINKY SEES ALL.'"
+      },
+      {
+        "roll": "3",
+        "text": "A nervous goblin patrol snaps to attention at the mention of 'the king.' They smell like they've been marinated."
+      }
+    ],
+    "behavior": [
+      {
+        "roll": "1",
+        "text": "Holding court from his throne, addressing subjects as though from a balcony. He over-enunciates and pauses for effect."
+      },
+      {
+        "roll": "2",
+        "text": "Personally polishing the Pole of Stinky with a rag, sniffing reverently between strokes."
+      },
+      {
+        "roll": "3",
+        "text": "Doling out an imaginative punishment to a goblin who bullied him in his youth. He has not forgotten a single one of them."
+      },
+      {
+        "roll": "4",
+        "text": "Conferring with his advisors about the Grimeback threat. Gumwort flinches at everything. Spackle speaks one word per minute. Damp Steve nods."
+      },
+      {
+        "roll": "5",
+        "text": "Inspecting the bewilderment bomb stockpile, personally sniffing each one to assess potency."
+      },
+      {
+        "roll": "6",
+        "text": "Sitting alone near the Pole of Stinky after hours, staring up at the snotrag with an expression that could almost be called tender."
+      }
+    ],
+    "loot": {
+      "title": "King Scab's Possessions",
+      "description": "If Scab is defeated or his quarters are looted:",
+      "dieType": "d6",
+      "table": [
+        {
+          "roll": "1-2",
+          "text": "2d20 copper pieces and a jar of fermented troll tears (bewilderment bomb ingredient, worth 5 gp to an alchemist)"
+        },
+        {
+          "roll": "3-4",
+          "text": "The Rusty Cleaver — functions as a +1 handaxe that deals an additional 1d6 poison damage, but the wielder's hands smell indescribably bad for 24 hours after use"
+        },
+        {
+          "roll": "5",
+          "text": "The Boot Crown — a moldy old leather boot worn as a crown. Grants the wearer advantage on Intimidation checks against goblins. Smells exactly as bad as you'd expect."
+        },
+        {
+          "roll": "6",
+          "text": "A small clay pot sealed with wax, containing a concentrated dose of Stinky's essence. Can be used as a single bewilderment bomb with DC 17 instead of DC 15, or sold to an extremely niche collector for 50 gp."
+        }
+      ]
+    },
+    "legendsAndLoreIntro": "With a History check, characters can learn:"
+  }
+}
