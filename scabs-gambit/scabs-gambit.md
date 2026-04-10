@@ -111,7 +111,7 @@ Players are free to explore the Snot Pit before departing on their mission. Key 
 
 ## MEETING THE BOSS
 
-> *Scab has a Napoleon complex. He is small, even for a goblin, but speaks as though he's addressing subjects from a balcony. He over-enunciates. He pauses for effect. He refers to himself as "your king" more than is strictly necessary. When he feels disrespected, his nose twitches.*
+> *Scab has a Napoleon complex. He is small, even for a goblin, but speaks as though he's addressing subjects from a balcony. He over-enunciates. He pauses for effect. He refers to himself as "your king" more than is strictly necessary. When he feels disrespected, he sniffs loudly and deliberately.*
 
 > You have been summoned by King Scab. Whatever you were doing, you stop doing it. When the king calls, you go.
 >
@@ -911,7 +911,7 @@ Mogrot has a **final eruption** ability: when he drops to 0 HP, his body explode
 **The chests in the room are not trapped but are locked (DC 12 to pick). They contain:**
 
 - Chest One: 3 potions of healing (heals 4d4+4 hit points each)
-- Chest Two: A dagger +1, a vial of Oil of Sharpness (coat a weapon for +3 to attack and damage for 1 hour), and a Bag of Chaos Beans (see Appendix A)
+- Chest Two: A dagger +1, a vial of Oil of Sharpness (coat a weapon for +3 to attack and damage for 1 hour), and a Bag of Sewer Beans (see Appendix A)
 - Chest Three: 432 gold pieces, 83 platinum pieces
 - Chest Four: 3 fire opals (worth 500 gp each)
 
@@ -1257,6 +1257,58 @@ The recently crowned king of the Snotrocket Society. Small even by goblin standa
 
 Since becoming king, Scab has proven sharper than anyone expected. He is cunning, ruthless when he needs to be, and fiercely protective of the Society that once tormented him. He still sniffs constantly - a lifelong habit - and is never far from the Pole of Stinky, which he polishes personally. He is a small goblin with a big reputation, and he rules through a combination of genuine cleverness, the fearful memory of how he killed King Battle Battle Wee, and the unshakable reverence every Snotrocket holds for Stinky and its chosen keeper.
 
+*Small Humanoid (goblinoid), Chaotic Neutral*
+
+**Armor Class** 14 (leather armor)
+**Hit Points** 35 (10d6)
+**Speed** 25 ft.
+
+| STR | DEX | CON | INT | WIS | CHA |
+|-----|-----|-----|-----|-----|-----|
+| 6 (-2) | 18 (+4) | 16 (+3) | 18 (+4) | 10 (+0) | 6 (-2) |
+
+**Saving Throws** Dex +7, Int +7
+**Skills** Stealth +7, Sleight of Hand +7, Perception +3, Intimidation +1
+**Senses** Darkvision 60 ft., Passive Perception 13
+**Languages** Common, Goblin
+**Challenge** 5 (1,800 XP)
+
+**Nimble Escape.** Scab can take the Disengage or Hide action as a bonus action on each of his turns.
+
+**Stinky's Blessing.** Once per day when Scab drops to 0 HP, the residual power of Stinky stabilizes him automatically and he regains 1 HP. He involuntarily sneezes green gloop on the creature that downed him (DC 14 Dex or blinded for 1 round).
+
+**Sewer Sovereign.** Snotrocket goblins within 30 feet of Scab cannot be frightened and have advantage on their next attack roll after Scab hits a target.
+
+**Aura of Stinky.** Scab carries the lingering, sacred reek of Stinky — his beloved snotrag — on his person at all times. Any creature that starts its turn within 10 feet of Scab and can smell must succeed on a DC 14 Constitution saving throw or be poisoned until the start of its next turn. Creatures that have been around Scab for more than 1 hour become accustomed to the smell and are immune to this effect. Snotrocket goblins are always immune.
+
+**Slippery.** Scab has advantage on ability checks and saving throws made to escape a grapple or restrain effect.
+
+**Actions**
+
+**Multiattack.** Scab makes two Rusty Cleaver attacks.
+
+**Rusty Cleaver.** *Melee Weapon Attack:* +7 to hit, reach 5 ft., one target. *Hit:* 8 (1d6 + 4) slashing damage plus 3 (1d6) poison damage from the filth caked on the blade.
+
+**Royal Sneeze (Recharge 5-6).** Scab unleashes a powerful, magically-charged sneeze in a 15-foot cone. Each creature must make a DC 14 Dex save or take 3d8 force damage, be pushed 10 feet back, knocked prone, and forced to drop whatever they are holding. On a success, half damage, no push, no prone, no disarm. This is how he killed King Battle Battle Wee.
+
+**Cleaver Flourish.** Scab makes a single Rusty Cleaver attack. On a hit, the target must make a DC 14 Wisdom save or be frightened of Scab until the end of their next turn as he fixes them with his most regal glare.
+
+**Fling Filth.** *Ranged Attack:* +7 to hit, range 20 ft., one target. Scab scoops a handful of the foulest sewer muck and hurls it. 2d6 poison damage and the target has disadvantage on their next attack roll as they retch.
+
+**Bewilderment Bomb.** Scab throws a bewilderment bomb up to 30 feet to create a 15-foot radius cloud for 1 minute. Creatures in the area must make a DC 15 Constitution save or become incapacitated and move randomly (d8 direction) each turn. Those who succeed have disadvantage on attacks and ability checks until they leave the cloud.
+
+**Bonus Actions**
+
+**Pocket Stink.** Scab cracks open a small vial of concentrated sewer essence. One creature within 5 feet must succeed on a DC 14 Con save or be poisoned and have their speed halved until the end of their next turn.
+
+**Boot Crown Rally.** Scab adjusts his boot crown with exaggerated dignity. All frightened allies within 30 feet can immediately repeat their saving throw against the frightened condition with advantage.
+
+**Reactions**
+
+**Meat Shield.** When Scab is hit by an attack, if an allied goblin is within 5 feet, Scab can redirect the attack to hit the ally instead. The king's survival is paramount. A true Snotrocket would understand.
+
+**Indignant Sneeze.** When a creature within 10 feet casts a spell targeting Scab, he reflexively sneezes. The caster must succeed on a DC 14 Con save or lose concentration (if concentrating) and have the spell's effect delayed by 1 round as mucus interferes with the magical energy.
+
 ---
 
 ### Gunk the Troll
@@ -1306,6 +1358,8 @@ A goblin inventor who lives alone in a maintenance closet, surrounded by salvage
 **Languages** Common, Goblin
 **Challenge** 1 (200 XP)
 
+**Nimble Escape.** The goblin can take the Disengage or Hide action as a bonus action on each of its turns.
+
 Fizzpop won't enter the Dripfort and won't engage in combat. Any attacks directed at her are deflected by one of her many defensive gadgets (DM's discretion - she's not meant to be killable by the players).
 
 ---
@@ -1329,6 +1383,12 @@ A quiet, careful goblin with sharp eyes and a talent for being overlooked. She's
 **Senses** Darkvision 60 ft., Passive Perception 14
 **Languages** Common, Goblin
 **Challenge** 1 (200 XP)
+
+**Nimble Escape.** The goblin can take the Disengage or Hide action as a bonus action on each of its turns.
+
+**Actions**
+
+**Dagger.** *Melee or Ranged Weapon Attack:* +5 to hit, reach 5 ft. or range 20/60 ft., one target. *Hit:* 5 (1d4 + 3) piercing damage.
 
 ---
 
@@ -1464,6 +1524,8 @@ A paranoid, twitchy goblin who was already unstable before acquiring the Cloak o
 **Languages** Common, Goblin
 **Challenge** 1 (200 XP)
 
+**Nimble Escape.** The goblin can take the Disengage or Hide action as a bonus action on each of its turns.
+
 Uses the **Grimeback Hexer** stat block.
 
 ---
@@ -1563,20 +1625,46 @@ This squirming mass of phosphorescent sewer worms can be applied to open wounds.
 
 When applied to a weapon (takes 1 minute), the weapon gains +3 to attack and damage rolls for 1 hour.
 
-### Bag of Chaos Beans
+### Bag of Sewer Beans
 
-A small leather bag containing 3d4 dried beans. When a bean is thrown on the ground (range 10 feet), it produces a random magical effect. Roll 1d8:
+A sticky leather pouch that smells faintly of troll sweat. Contains 3d4 dried beans. When a bean is thrown on the ground (range 10 feet), it produces a random magical effect. Roll 1d20:
 
 | Roll | Effect |
 |------|--------|
-| 1 | A burst of harmless colored smoke fills a 10-foot radius. |
-| 2 | A shrieking mushroom sprouts and screams for 1 minute, alerting everything within 300 feet. |
-| 3 | 1d4+1 frogs rain down in a 10-foot area. They're normal frogs. They're confused. |
-| 4 | The bean explodes for 2d6 fire damage in a 5-foot radius (DC 12 Dex save for half). |
-| 5 | A 10-foot pit opens beneath the bean. Any creature in the area must succeed on a DC 12 Dex save or fall in (1d6 bludgeoning damage). |
-| 6 | The bean sprouts into a 15-foot tree instantly. Any creature in the space is pushed to the nearest unoccupied space. |
-| 7 | A **mutant sewer rat** appears and is hostile to everyone. |
-| 8 | The bean produces a blinding flash. All creatures within 10 feet must succeed on a DC 12 Constitution save or be blinded for 1 round. |
+| 1 | A wet fart sound echoes through the sewer. Nothing else happens. The beans are just like that sometimes. |
+| 2 | The bean melts into a puddle and a tiny sewer goblin made of slime rises out of it, no taller than a boot. It follows the thrower around for 1d4 hours, narrating everything they do in a shrill whisper. It cannot be silenced, harmed, or reasoned with. It has opinions. |
+| 3 | The bean sprouts into a gnarled little shrub bearing 1d6 dripping, foul-smelling fruits. Any creature that eats one must roll a d6: on an odd roll, they vomit violently and are poisoned for 1 hour. On an even roll, they gain 2d6 temporary hit points and their skin turns a shade of green for 24 hours. |
+| 4 | A manhole cover (or stone slab, if underground) launches into the air and crashes down 1d4 x 10 feet away in a random direction. Beneath it is a tiny, perfectly furnished goblin apartment. There is no one home, but dinner is cooking. The stew restores 2d4+2 HP if eaten but tastes indescribable. |
+| 5 | A shrieking mushroom with a little goblin face sprouts and screams for 1 minute, alerting everything within 300 feet. It locks eyes with the nearest creature and will not stop. After it finishes screaming, it coughs up a small key. The key fits something. Somewhere. The DM decides what. |
+| 6 | The thrower's shadow detaches, stands up, and starts doing its own thing for 1d10 minutes. It rummages through packs, pokes other party members, and generally makes a nuisance of itself. It can pick up small objects but can't deal damage. It is immune to everything and absolutely will not listen. |
+| 7 | A spectral sewer goblin appears, points at the nearest creature, and announces their most embarrassing secret to everyone within 60 feet. The DM decides what the secret is (or the player confesses one). The target has disadvantage on Charisma checks for 1 hour as everyone processes what they just heard. |
+| 8 | The bean cracks open and a torrent of 1d4+1 sticky, confused sewer frogs pours out. Each frog is a different unnatural color. Whenever a frog is touched, it transforms into a hostile sewer creature of the DM's choice (CR 2 or lower) for 1 minute, then pops back into a frog. The frogs don't leave. They like you now. |
+| 9 | An animate stone statue of the thrower rises out of the sewer floor. It's crude, ugly, and unflattering. If the party leaves it, it shouts vile insults about the thrower to anyone who passes by and directs them to hunt the thrower down. It knows where the thrower is at all times. It becomes inanimate after 24 hours. Probably. |
+| 10 | A fruit-bearing fungal tree grows instantly to 15 feet tall, shoving anyone in its space aside. It bears 1d10+5 glowing fruits. 1d6 of them function as random potions (DM's choice). One of them is a potent ingested poison (4d6 damage, DC 14 Con save for half). The rest are just disgusting. The tree crumbles to dust after 1 hour, but picked fruits remain and keep their magic for 30 days. |
+| 11 | A **mutant sewer rat** the size of a large dog claws out of the ground. It has glowing eyes, one weirdly human-looking tooth, and an unsettling intelligence. It's hostile to everyone — but if someone offers it food, it calms down and follows that creature loyally for 24 hours. It understands Common but responds only in angry chittering. It has a name. It won't tell you what it is. |
+| 12 | The ground in a 15-foot radius turns to a bubbling, knee-deep bog of warm sewer sludge. Any creature in the area must make a DC 13 Strength save or be restrained. The sludge is alive with tiny biting things — restrained creatures take 1d6 damage at the start of each turn. Somewhere in the muck is a small, filthy pouch containing 2d20 gold coins and a love letter written in Goblin. |
+| 13 | 1d6+2 tiny goblin ghosts rise from the ground, each one a former owner of the bag. They're not hostile — they just want to watch what happens next. They provide running commentary on everything the party does for 1d4 hours. They cheer for critical hits, boo for misses, and give terrible tactical advice. They cannot be banished. They're having the time of their afterlife. |
+| 14 | A nest of 1d4+3 mottled eggs bubbles up from the ground. Any creature that eats an egg must make a DC 16 Constitution save. On a success, they permanently increase their lowest ability score by 1 (randomly chosen among ties). On a failure, the egg explodes inside them for 6d6 force damage. The eggs smell awful either way. |
+| 15 | A **swarm of rats** and a **swarm of insects** erupt from the bean's landing spot, locked in a tiny war with each other. They fight for 1d4 rounds, ignoring the party — unless anyone intervenes, in which case both swarms immediately unite against the meddler. Whichever swarm wins becomes docile and follows the thrower for 1 hour like an extremely gross pet. |
+| 16 | The bean cracks open a tiny portal to the Elemental Plane of Ooze. A torrent of grey-green slime floods a 20-foot area. An **ochre jelly** slides through before the portal snaps shut. The jelly is confused and angry. Everything in the area is coated in planar slime that smells like a hot dumpster and takes 1d4 days to fully wash off. NPCs react accordingly. |
+| 17 | A **goblin wizard** pops into existence in a flash of purple light and a splatter of green gloop. He's an ancient, wrinkled goblin with great tufts of hair sprouting from his ears — something about him feels oddly familiar — draped in a cloak so foul it appears to have its own ecosystem, with a very familiar tatty old leather boot perched on his head. He's waving a rusty meat cleaver in the air that crackles with arcane energy. He squints at you and shrieks *"You're too early! Or am I too late?!"* He slams the cleaver into the ground and a wave of purple energy ripples outward, leaving trails of green slime in its wake. All creatures within 30 feet must make a DC 16 Wisdom save. On a failure, the creature is unstuck in time for 1 minute: at the start of each of their turns, roll a d8. On a success, the creature's movement speed is halved for 1 round as time hiccups around them. The wizard picks his nose with his cleaver hand, mutters something about "the timeline," and vanishes with a loud pop that smells like burnt cheese. |
+
+**Time Effects (d8 sub-table for entry 17):**
+
+| d8 | Time Effect |
+|----|-------------|
+| 1 | They age 1d4 x 10 years. Permanently. They lose their turn (stunned) as their joints seize and their hair goes white. |
+| 2 | They revert to a toddler until the end of their next turn. Their gear falls off. They can only move 5 feet and babble. |
+| 3 | They're frozen in time. Incapacitated and immune to all damage until the start of their next turn. They don't know any time has passed. |
+| 4 | They relive the last 6 seconds. They must repeat their previous turn's actions exactly, targeting the same creatures or spaces. If this is impossible, the temporal loop fails catastrophically — they are permanently afflicted with an unscratchable itch deep inside their brain. They have disadvantage on concentration checks forever. |
+| 5 | They get a glimpse of the next 6 seconds. They have advantage on all attacks, saves, and checks until the end of their next turn. |
+| 6 | They split into two temporal copies of themselves until the end of their next turn. The copy acts on the same initiative and shares HP. |
+| 7 | They blink forward in time. They vanish, reappearing at the start of their next turn in a space of their choice within 30 feet, fully healed of any damage taken this round. |
+| 8 | Time crystallizes around them. They are immune to all further time effects and immediately take an extra turn. |
+
+| 18 | The sewer walls groan and reshape themselves. A 30-foot section of tunnel rearranges into a crude throne room — complete with a dripping throne of fused pipes and bones, flickering bioluminescent torches, and a 10-foot mosaic on the floor depicting a goblin king conquering the surface world. A booming voice declares *"THE COURT IS NOW IN SESSION"* and refuses to let anyone leave until they settle a dispute between two spectral goblins arguing over who owns a dead fish. Both make compelling arguments. |
+| 19 | A gurgling rumble shakes the ground. A **shambling mound** made entirely of compacted sewage, bones, and lost items rises from the floor. It's hostile. It's disgusting. One of its "hands" is a rusty shovel, the other is a tangled mass of old rope and someone's trousers. Any creature it grapples is pulled inside it and must make a DC 14 Strength save each turn to escape. Creatures inside it find 1d4 random mundane items per round. One of them might be useful. Most of them are not. |
+| 20 | The bean cracks reality. A geyser of raw magical sewage erupts in a 30-foot radius. Every creature in the area takes 4d6 acid damage (DC 15 Dex save for half) and must roll on the *Wild Magic Surge* table. The area becomes difficult terrain permanently — coated in a thick layer of glowing, mutagenic sludge. Any creature that starts its turn in the sludge must succeed on a DC 14 Con save or gain a random mutation (extra finger, one eye turns yellow, tongue forks, teeth fall out and regrow backwards, patches of fur, one ear migrates to the forehead, etc.) lasting 1d4 weeks. There is a 10% chance one mutation is permanent. The DM smiles. |
 
 ---
 
