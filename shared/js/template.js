@@ -499,23 +499,23 @@ var AdventureReader = (function () {
     buildNav(config, nav);
   }
 
-  // ── Stat block rendering ──────────────────────────────────────────
+  // ── Stat block links ──────────────────────────────────────────────
 
   function renderStatblocks(config) {
-    if (!config.statblocks || typeof StatblockRenderer === 'undefined') return;
+    var links = config.statblockLinks;
+    if (!links) return;
 
-    var statblockFiles = config.statblocks;
+    // In appendix sections, replace raw stat block HTML with simple linked entries
     var appendixSections = document.querySelectorAll('.section-appendix');
-
     appendixSections.forEach(function (sec) {
       var children = Array.from(sec.children);
       var i = 0;
 
       while (i < children.length) {
         var el = children[i];
-        if (el.tagName === 'H3' && statblockFiles[el.textContent.trim()]) {
+        if (el.tagName === 'H3' && links[el.textContent.trim()] !== undefined) {
           var name = el.textContent.trim();
-          var jsonFile = statblockFiles[name];
+          var url = links[name];
 
           // Collect elements belonging to this stat block (until next h3/h2 or end)
           var toRemove = [el];
@@ -525,30 +525,93 @@ var AdventureReader = (function () {
             j++;
           }
 
-          // Create container, preserve the h3's id for navigation
-          var container = document.createElement('div');
-          container.id = el.id;
-          container.style.scrollMarginTop = '24px';
-          el.before(container);
+          // Create a styled link entry
+          var entry = document.createElement('div');
+          entry.className = 'statblock-link-entry';
+          entry.id = el.id;
+          entry.style.scrollMarginTop = '24px';
 
-          // Remove old raw HTML
+          if (url) {
+            var a = document.createElement('a');
+            a.href = url;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            a.className = 'statblock-link';
+            a.textContent = name;
+            entry.appendChild(a);
+          } else {
+            var span = document.createElement('span');
+            span.className = 'statblock-link-pending';
+            span.textContent = name;
+            entry.appendChild(span);
+          }
+
+          el.before(entry);
           toRemove.forEach(function (r) { r.remove(); });
 
-          // Fetch and render
-          (function (c, f) {
-            fetch('data/' + f)
-              .then(function (r) { return r.json(); })
-              .then(function (data) { StatblockRenderer.render(data, c); })
-              .catch(function (e) { c.textContent = 'Failed to load stat block: ' + e.message; });
-          })(container, jsonFile);
-
-          // Refresh children list since DOM changed
           children = Array.from(sec.children);
           i = 0;
           continue;
         }
         i++;
       }
+    });
+
+    // Auto-link creature names throughout the document body
+    var names = Object.keys(links).filter(function(n) { return links[n]; });
+    // Sort by length descending so longer names match first (e.g., "Grimeback Thug" before "Grimeback")
+    names.sort(function(a, b) { return b.length - a.length; });
+
+    if (names.length === 0) return;
+
+    // Build regex pattern
+    var escaped = names.map(function(n) {
+      return n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    });
+    var pattern = new RegExp('\\b(' + escaped.join('|') + ')\\b', 'g');
+
+    // Walk text nodes in .section divs (not in appendix link entries, not in headings, not in existing links)
+    var sections = document.querySelectorAll('.section:not(.section-appendix)');
+    sections.forEach(function(sec) {
+      var walker = document.createTreeWalker(sec, NodeFilter.SHOW_TEXT, null, false);
+      var textNodes = [];
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+      textNodes.forEach(function(node) {
+        // Skip if inside a link, heading, or nav
+        var parent = node.parentElement;
+        if (!parent) return;
+        if (parent.tagName === 'A' || parent.tagName === 'H2' || parent.tagName === 'H3' ||
+            parent.closest('a') || parent.closest('.sidebar-nav') || parent.closest('.statblock-link-entry')) return;
+
+        var text = node.textContent;
+        if (!pattern.test(text)) return;
+        pattern.lastIndex = 0;
+
+        var frag = document.createDocumentFragment();
+        var lastIdx = 0;
+        var match;
+        pattern.lastIndex = 0;
+        while ((match = pattern.exec(text)) !== null) {
+          // Add text before match
+          if (match.index > lastIdx) {
+            frag.appendChild(document.createTextNode(text.substring(lastIdx, match.index)));
+          }
+          // Create link
+          var a = document.createElement('a');
+          a.href = links[match[1]];
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.className = 'creature-link';
+          a.textContent = match[1];
+          frag.appendChild(a);
+          lastIdx = pattern.lastIndex;
+        }
+        if (lastIdx < text.length) {
+          frag.appendChild(document.createTextNode(text.substring(lastIdx)));
+        }
+        node.parentNode.replaceChild(frag, node);
+      });
     });
   }
 

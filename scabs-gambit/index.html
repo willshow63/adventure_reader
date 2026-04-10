@@ -187,102 +187,34 @@
     color: inherit !important;
   }
 
-  /* Statblock color overrides — matching the PDF source style */
-  .stat-block {
-    border-top: 3px solid var(--magenta) !important;
-    border-bottom: 3px solid var(--magenta) !important;
-    border-left: none !important;
-    border-right: none !important;
-    background: rgba(255,255,255,0.5);
-    box-shadow: none;
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 10pt;
-    line-height: 1.35;
+  /* Stat block link entries in Bestiary / Cast */
+  .statblock-link-entry {
+    margin: 8px 0;
+    padding: 8px 14px;
+    border-left: 3px solid var(--magenta);
+    background: rgba(255,255,255,0.3);
   }
-  .monster-name { color: var(--magenta) !important; font-family: 'Crimson Text', Georgia, serif !important; }
-  .monster-type { color: var(--text) !important; }
-  /* Thick gradient dividers matching monster-statblock style */
-  .stat-block .divider {
-    height: 4px !important;
-    background: linear-gradient(to right, var(--magenta), var(--magenta) 60%, transparent) !important;
-    margin: 10px 0 !important;
+  .statblock-link {
+    font-family: "Modesto Poster", "modesto-poster", 'Cinzel', serif;
+    font-size: 1.2em; font-weight: 400;
+    color: var(--magenta); text-decoration: none;
+    letter-spacing: 1px; text-transform: uppercase;
+    transition: color 0.15s;
   }
-  /* Stat labels in magenta */
-  .stat-block .stat-label { color: var(--magenta) !important; font-weight: 700; }
-  /* Ability scores: magenta headers, no extra borders (dividers handle separation) */
-  .stat-block .abilities {
-    color: var(--magenta) !important;
-    border: none;
-    padding: 4px 0;
-    margin: 0 !important;
+  .statblock-link:hover { color: var(--text); text-decoration: underline; }
+  .statblock-link-pending {
+    font-family: "Modesto Poster", "modesto-poster", 'Cinzel', serif;
+    font-size: 1.2em; font-weight: 400;
+    color: var(--text-light); letter-spacing: 1px; text-transform: uppercase;
   }
-  .stat-block .ability-score { color: var(--text) !important; }
-  /* Secondary stat labels in magenta */
-  .stat-block .secondary-stats .stat-label { color: var(--magenta) !important; }
-  /* Section headers — Modesto Poster */
-  .stat-block .section-header {
-    color: var(--magenta) !important;
-    border-bottom: 1.5px solid var(--magenta) !important;
-    font-family: "Modesto Poster", "modesto-poster", 'Cinzel', serif !important;
-    font-weight: 400 !important;
+  /* Auto-linked creature names in body text */
+  .creature-link {
+    color: var(--magenta);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--magenta);
+    transition: color 0.15s;
   }
-  /* Feature/action names */
-  .stat-block .feature-name, .stat-block .action-name { color: var(--text) !important; }
-  /* Column divider */
-  .stat-col-1 { border-right-color: var(--sage) !important; }
-  /* Tabs — gray inactive, white active, no green */
-  .statblock-tab {
-    color: var(--magenta) !important;
-    font-family: "Modesto Poster", "modesto-poster", 'Cinzel', serif !important;
-    font-weight: 400 !important;
-    font-variant: small-caps !important;
-    letter-spacing: 1px !important;
-    background: #d8d4cd !important;
-    border: none !important;
-  }
-  .statblock-tab:hover { background: #ccc8c0 !important; }
-  .statblock-tab.active { background: rgba(255,255,255,0.5) !important; }
-  /* Kill the green top border from shared statblock.css on the stat-block when inside tabs */
-  .statblock-panel .stat-block { border-top: none; }
-  .statblock-panel .lore-block { border-top: none; }
-  /* Lore block */
-  .lore-block {
-    border-top: 3px solid var(--magenta) !important;
-    border-bottom: 3px solid var(--magenta) !important;
-    border-left: none !important;
-    border-right: none !important;
-    background: rgba(255,255,255,0.5);
-    box-shadow: none;
-    font-family: 'Crimson Text', Georgia, serif;
-    font-size: 10pt;
-  }
-  /* Prevent text-indent and drop-cap leak into stat/lore blocks */
-  .stat-block p, .lore-block p { text-indent: 0 !important; }
-  .lore-block p::first-letter,
-  .stat-block p::first-letter {
-    font-size: inherit !important; float: none !important;
-    line-height: inherit !important; padding: 0 !important;
-    color: inherit !important;
-  }
-  .lore-title {
-    color: var(--magenta) !important;
-    font-family: 'Crimson Text', Georgia, serif !important;
-  }
-  .lore-section-header {
-    color: var(--magenta) !important;
-    border-bottom-color: var(--magenta) !important;
-    font-family: "Modesto Poster", "modesto-poster", 'Cinzel', serif !important;
-    font-weight: 400 !important;
-  }
-  .lore-table th { background: var(--magenta) !important; }
-  /* Widths — let the renderer's column sizing work, just cap overflow */
-  .stat-block.two-column { max-width: 100%; }
-  .stat-block.single-column { max-width: 100%; }
-  .statblock-wrapper { margin: 28px 0; }
-  /* Lore block two-column layout */
-  .lore-columns {
-    display: flex;
-    gap: 40px;
+  .creature-link:hover { color: var(--text); }
   }
   .lore-col { flex: 1; min-width: 0; }
   .lore-col-1 { border-right: 1px solid var(--magenta); padding-right: 20px; }
@@ -442,8 +374,7 @@
     h2 { font-size: 1.3em; }
   }
 </style>
-<link rel="stylesheet" href="../shared/css/statblock.css">
-<script src="../shared/js/statblock-renderer.js"></script>
+<!-- Statblock renderer archived — using external links instead -->
 <script src="../shared/js/template.js"></script>
 </head>
 <body class="has-nav">
