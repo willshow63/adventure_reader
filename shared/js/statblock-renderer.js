@@ -164,10 +164,51 @@ var StatblockRenderer = (function() {
             sections.push('<div class="lore-section"><h2 class="lore-section-header">Names</h2><p class="lore-names">' + summary.names + '</p></div>');
         }
 
-        // Build single-column lore block
+        // Measure sections to decide single vs two-column layout
+        var colWidth = 380;
+        var heights = [];
+        var totalHeight = 0;
+        for (var i = 0; i < sections.length; i++) {
+            var h = measureSectionHeight(sections[i], colWidth);
+            heights.push(h);
+            totalHeight += h;
+        }
+
         var html = '<div class="lore-block">';
         html += '<h1 class="lore-title">' + summaryName + '</h1>';
-        for (var i = 0; i < sections.length; i++) html += sections[i];
+
+        // Single column if short
+        if (totalHeight <= 400 || sections.length < 3) {
+            for (var i = 0; i < sections.length; i++) html += sections[i];
+            html += '</div>';
+            return html;
+        }
+
+        // Two-column: find best split (col1 >= col2, most balanced)
+        var bestSplit = -1;
+        var bestScore = Infinity;
+        for (var split = 1; split < sections.length; split++) {
+            var col1H = 0, col2H = 0;
+            for (var j = 0; j < split; j++) col1H += heights[j];
+            for (var j = split; j < sections.length; j++) col2H += heights[j];
+            if (col2H > col1H * 1.05) continue;
+            var imbalance = col2H > col1H ? (col2H - col1H) * 2 : col1H - col2H;
+            if (imbalance < bestScore) { bestScore = imbalance; bestSplit = split; }
+        }
+
+        if (bestSplit === -1) {
+            for (var i = 0; i < sections.length; i++) html += sections[i];
+        } else {
+            html += '<div class="lore-columns">';
+            html += '<div class="lore-col lore-col-1">';
+            for (var i = 0; i < bestSplit; i++) html += sections[i];
+            html += '</div>';
+            html += '<div class="lore-col lore-col-2">';
+            for (var i = bestSplit; i < sections.length; i++) html += sections[i];
+            html += '</div>';
+            html += '</div>';
+        }
+
         html += '</div>';
         return html;
     }
