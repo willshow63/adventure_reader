@@ -283,6 +283,62 @@ var AdventureReader = (function () {
       }
     }
 
+    // Convert inline d8 sub-table patterns in table cells to nested tables
+    // Detects: **1** — text. **2** — text. ... **8** — text.
+    var allTds = container.querySelectorAll('td');
+    for (var i = 0; i < allTds.length; i++) {
+      var td = allTds[i];
+      var html = td.innerHTML;
+      var match = html.match(/<strong>1<\/strong>\s*[—–-]\s*/);
+      if (!match) continue;
+      // Check there's at least a **2** as well
+      if (!html.match(/<strong>2<\/strong>\s*[—–-]/)) continue;
+      // Split on the pattern **N** —
+      var parts = html.split(/(<strong>\d+<\/strong>\s*[—–-]\s*)/);
+      if (parts.length < 5) continue;
+      // Find where the numbered entries start
+      var beforeEntries = '';
+      var entries = [];
+      var afterEntries = '';
+      var inEntries = false;
+      var currentNum = '';
+      var currentText = '';
+      for (var p = 0; p < parts.length; p++) {
+        var numMatch = parts[p].match(/<strong>(\d+)<\/strong>\s*[—–-]\s*/);
+        if (numMatch) {
+          if (currentNum) entries.push({ num: currentNum, text: currentText.trim() });
+          currentNum = numMatch[1];
+          currentText = '';
+          inEntries = true;
+        } else if (inEntries) {
+          currentText += parts[p];
+        } else {
+          beforeEntries += parts[p];
+        }
+      }
+      if (currentNum) entries.push({ num: currentNum, text: currentText.trim() });
+      if (entries.length < 3) continue;
+      // Check if there's text after the last entry (the "On a success..." part)
+      var lastEntry = entries[entries.length - 1];
+      var sentenceBreak = lastEntry.text.indexOf('. On a success');
+      if (sentenceBreak < 0) sentenceBreak = lastEntry.text.indexOf('. The wizard');
+      if (sentenceBreak >= 0) {
+        afterEntries = lastEntry.text.substring(sentenceBreak + 2);
+        lastEntry.text = lastEntry.text.substring(0, sentenceBreak + 1);
+      }
+      // Build sub-table HTML
+      var subHtml = beforeEntries;
+      subHtml += '<table class="subtable" style="margin:10px 0 10px 16px;margin-right:24px;font-size:0.92em;width:calc(100% - 40px);">';
+      subHtml += '<thead><tr><th style="border-right:1.5px solid var(--magenta);">d' + entries.length + '</th><th>Effect</th></tr></thead><tbody>';
+      for (var e = 0; e < entries.length; e++) {
+        var rc = e % 2 === 0 ? 'row-tinted' : 'row-clear';
+        subHtml += '<tr class="' + rc + '"><td style="border-right:1.5px solid var(--magenta);">' + entries[e].num + '</td><td>' + entries[e].text + '</td></tr>';
+      }
+      subHtml += '</tbody></table>';
+      if (afterEntries) subHtml += afterEntries;
+      td.innerHTML = subHtml;
+    }
+
     // Mark the first h2 with class first-section
     var firstH2 = container.querySelector('h2');
     if (firstH2) firstH2.classList.add('first-section');
