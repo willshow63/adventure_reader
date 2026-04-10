@@ -1,0 +1,37 @@
+{
+  "title": "Scab's Gambit",
+  "subtitle": "A Filthy Few Adventure",
+  "level": "for 3-6 Level 3 Goblin Characters",
+  "setting": "Set in the Blackstone Sewers",
+  "chapters": [
+    { "title": "Introduction", "sections": ["Adventure Summary", "Starting the Adventure", "Crew Roles", "Adventure Intro", "Beefs & Bonds"] },
+    { "label": "Chapter 1", "title": "The Snot Pit", "sections": ["The Snot Pit", "Meeting the Boss"] },
+    { "label": "Chapter 2", "title": "Preparation", "sections": ["Recruiting Gunk", "Speaking with Fizzpop", "The Ticking Clock"] },
+    { "label": "Chapter 3", "title": "The Blackflow", "sections": ["The Blackflow"] },
+    { "label": "Chapter 4", "title": "The Dripfort", "sections": ["The Pumphouse", "The Way In", "Alerting the Pumphouse", "Daytime Observation", "Pumphouse Locations"] },
+    { "label": "Chapter 5", "title": "Escape & Aftermath", "sections": ["Escaping the Pumphouse", "Ending the Adventure"] },
+    { "title": "Appendices", "sections": ["Bestiary", "The Cast", "Appendix A: Magic Items", "Appendix A (Continued): Other Items", "Appendix T: Goblin Trinkets (Roll 1d20)", "Appendix S: The Snot Pit"] }
+  ],
+  "appendixSections": ["Bestiary", "The Cast", "Appendix A: Magic Items", "Appendix A (Continued): Other Items", "Appendix T: Goblin Trinkets (Roll 1d20)", "Appendix S: The Snot Pit"],
+  "statblocks": {
+    "Grimeback Goblin": "grimeback_goblin.json",
+    "Grimeback Thug": "grimeback_thug.json",
+    "Grimeback Hexer": "grimeback_hexer.json",
+    "Mutant Sewer Rat": "mutant_sewer_rat.json",
+    "Sewer Rat Swarm": "sewer_rat_swarm.json",
+    "Sludge Lurker": "sludge_lurker.json",
+    "Pipe Spider": "pipe_spider.json",
+    "Sewer Imp (Snik)": "sewer_imp.json",
+    "Giant Sewer Roach (Mount)": "giant_sewer_roach.json",
+    "Goat": "goat.json",
+    "King Scab": "king_scab.json",
+    "Gunk the Troll": "gunk_the_troll.json",
+    "Fizzpop the Tinker": "fizzpop_the_tinker.json",
+    "Drizzle": "drizzle.json",
+    "Rattooth": "rattooth.json",
+    "Skivvy": "skivvy.json",
+    "Blort": "blort.json",
+    "Gristla": "gristla.json",
+    "Mogrot the Wide": "mogrot_the_wide.json"
+  }
+}
