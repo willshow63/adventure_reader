@@ -88,7 +88,8 @@ var StatblockRenderer = (function() {
         // Legends and Lore
         if (summary.legendsAndLore && summary.legendsAndLore.length > 0) {
             var s = '<div class="lore-section"><h2 class="lore-section-header">Legends and Lore</h2>';
-            s += '<p class="lore-intro">With a History or Nature check, characters can learn the following:</p>';
+            var loreIntro = summary.legendsAndLoreIntro || 'With a History or Nature check, characters can learn the following:';
+            s += '<p class="lore-intro">' + loreIntro + '</p>';
             for (var i = 0; i < summary.legendsAndLore.length; i++) {
                 s += '<div class="lore-dc-entry"><strong>DC ' + summary.legendsAndLore[i].dc + '</strong> ' + summary.legendsAndLore[i].text + '</div>';
             }
